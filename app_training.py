@@ -1,3 +1,4 @@
+import random
 from torch.utils.data import DataLoader, TensorDataset,random_split
 import torch.optim as optim
 from app_model import SentimentClassifierNN
