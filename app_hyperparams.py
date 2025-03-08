@@ -1,19 +1,22 @@
 import optuna
 import torch
 import torch.nn as nn
-from app_training import Trainer
+from app_training import *
 
 
 class HyperparameterOptimization:
-    def __init__(self, df, input_tfidf_dim, input_bert_dim, name_study='hyperparameter_optimization', num_trials=40, num_epochs=35):
-        self.df = df
-        self.input_tfidf_dim = input_tfidf_dim
-        self.input_bert_dim = input_bert_dim
+    def __init__(self, bert_numpy, tfidf_numpy, labels,name_study='hyperparameter_optimization', num_trials=40, num_epochs=35):
+       
+        self.input_tfidf_dim = tfidf_numpy.shape[1]
+        self.input_bert_dim = bert_numpy.shape[1]
         self.num_trials = num_trials
         self.num_epochs = num_epochs
         self.name_study = name_study
+        self.bert_numpy=bert_numpy
+        self.tfidf_numpy=tfidf_numpy
+        self.labels=labels
         self.criterion=nn.CrossEntropyLoss()
-        
+
 
     def objective(self, trial):
         lr = trial.suggest_float("lr", 1e-5, 1e-2, log=True)
@@ -27,11 +30,14 @@ class HyperparameterOptimization:
             "SGD": torch.optim.SGD,
         }
         selected_optimizer = optimizer_dict[optimizer_name]
-        
-              
+
+
         trainer = Trainer(
         input_tfidf_dim=self.input_tfidf_dim,
         input_bert_dim=self.input_bert_dim,
+        bert_numpy=self.bert_numpy,
+        tfidf_numpy=self.tfidf_numpy,
+        labels=self.labels,
         criterion=self.criterion,
         optimizer=selected_optimizer,
         epochs=self.num_epochs,
@@ -41,17 +47,17 @@ class HyperparameterOptimization:
         dropout=dropout
         )
 
-  
-        val_losses = trainer.train(self.df)
- 
+
+        val_losses = trainer.train()
+
         return val_losses[-1]
 
     def optimize(self):
         study = optuna.create_study(
             direction="minimize",
-            storage="sqlite:///optuna_study.db", 
-            study_name=self.name_study, 
-            load_if_exists=True  
+            storage="sqlite:///optuna_study.db",
+            study_name=self.name_study,
+            load_if_exists=True
         )
         study.optimize(self.objective, n_trials=self.num_trials)
         return study

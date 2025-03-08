@@ -1,13 +1,21 @@
 import random
 from torch.utils.data import DataLoader, TensorDataset,random_split
-import torch.optim as optim
-from app_model import SentimentClassifierNN
+from pyspark.ml.linalg import Vector
 import torch
-import torch.nn as nn
 import numpy as np
 from tqdm import tqdm
+from app_model import *
+
+
+
+def vector_to_dense(vec):
+    if vec is not None and isinstance(vec, Vector): 
+        return vec.toArray().tolist()
+    else:
+        return [0.0] * 5000
+
 class Trainer:
-    def __init__(self, input_tfidf_dim, input_bert_dim,criterion, optimizer, epochs=10, batch_size=32, learning_rate=1e-4, weight_decay=1e-5, dropout=0.3, seed=42, patience=3):
+    def __init__(self, input_tfidf_dim, input_bert_dim,bert_numpy,tfidf_numpy,labels,criterion, optimizer, epochs=10, batch_size=32, learning_rate=1e-4, weight_decay=1e-5, dropout=0.3, seed=42, patience=3):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.criterion = criterion
         self.epochs = epochs
@@ -16,45 +24,43 @@ class Trainer:
         self.patience = patience
         self.model = SentimentClassifierNN(input_tfidf_dim, input_bert_dim, dropout).to(self.device)
         self.optimizer = optimizer(self.model.parameters(), lr=learning_rate, weight_decay=weight_decay)
-        
-
         self.set_seed(seed)
+        self.bert_numpy=bert_numpy
+        self.tfidf_numpy=tfidf_numpy
+        self.labels=labels
+        
 
     def set_seed(self, seed):
         random.seed(seed)
         np.random.seed(seed)
         torch.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
+    
+    
 
-    def train(self, df):
+
+    def train(self):
         print("[INFO]: Entrenando red neuronal...")
-        bert_numpy = np.array(df.select("bert_numpy").rdd.flatMap(lambda x: x).collect())
-        tfidf_numpy = np.array(df.select("tfidf_numpy").rdd.flatMap(lambda x: x).collect())
-        labels = np.array(df.select("sentiment").rdd.flatMap(lambda x: x).collect())
+        
+        
+        bert_tensor = torch.tensor(self.bert_numpy, dtype=torch.float32)
+        tfidf_tensor = torch.tensor(self.tfidf_numpy, dtype=torch.float32)
+        label_tensor = torch.tensor(self.labels, dtype=torch.long)
 
-        bert_tensor = torch.tensor(bert_numpy, dtype=torch.float32)
-        tfidf_tensor = torch.tensor(tfidf_numpy, dtype=torch.float32)
-        label_tensor = torch.tensor(labels, dtype=torch.long)
-        
-        bert_dim=bert_tensor.shape[0]
-        tfidf_dim=tfidf_tensor.shape[0]
-        
-        self.model=SentimentClassifierNN(tfidf_dim,bert_dim, self.dropout).to(self.device)
-        
         dataset = TensorDataset(bert_tensor, tfidf_tensor, label_tensor)
-        
+
         train_size = int(0.8 * len(dataset))
         val_size = len(dataset) - train_size
         train_dataset, val_dataset = random_split(dataset, [train_size, val_size], generator=torch.Generator().manual_seed(self.seed))
-        
+
         train_loader = DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True)
         val_loader = DataLoader(val_dataset, batch_size=self.batch_size, shuffle=False)
-        
-        best_val_loss = float('inf') 
-        best_model_state = None      
+
+        best_val_loss = float('inf')
+        best_model_state = None
         pbar = tqdm(range(self.epochs), desc='Training', unit='epoch',
                     postfix={'train_loss': 0.0, 'val_loss': 0.0,'train_accuracy': 0.0 , 'val_accuracy':0.0})
-       
+
         for epoch in pbar:
             self.model.train()
             train_loss = 0.0
@@ -66,7 +72,7 @@ class Trainer:
                 loss = self.criterion(outputs, targets)
                 loss.backward()
                 self.optimizer.step()
-                
+
                 train_loss += loss.item()
                 train_correct += (outputs.argmax(dim=1) == targets).sum().item()
                 total_train_samples += targets.size(0)
@@ -87,15 +93,15 @@ class Trainer:
 
             val_loss /= len(val_loader)
             val_accuracy = val_correct / total_val_samples
-            
+
             if val_loss < best_val_loss:
                 best_val_loss = val_loss
                 best_model_state = self.model.state_dict()
-                patience_counter = 0  
+                patience_counter = 0
             else:
                 patience_counter += 1
 
-            
+
             if patience_counter >= self.patience:
                 print(f"[INFO]: Early stopping activado en la época {epoch+1}")
                 break
@@ -104,7 +110,7 @@ class Trainer:
 
         print("[INFO]: Entrenamiento finalizado.")
 
-       
+
         if best_model_state:
             model_path = f'./modelos/best_model_{best_val_loss}_.pth'
             torch.save(best_model_state, model_path)
