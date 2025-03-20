@@ -1,1 +1,7 @@
 venv
+embeddings/
+datasets/
+__pycache__/
+temp_batches/
+optuna_study.db
+.devcontainer/

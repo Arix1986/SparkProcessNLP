@@ -9,9 +9,10 @@ class SparkNLPProcessor:
         else:
             self.spark = SparkSession.builder \
                 .appName(app_name) \
-                .config("spark.driver.memory", "4g") \
-                .config("spark.executor.memory", "4g") \
-                .config("spark.kryoserializer.buffer.max", "1000M") \
+                .config("spark.driver.memory", "16g") \
+                .config("spark.executor.memory", "16g") \
+                .config("spark.kryoserializer.buffer.max", "1500M") \
+                .config("spark.rpc.message.maxSize", "256") \
                 .getOrCreate()
             sparknlp.start(spark=self.spark)
             print(f"Spark NLP versión: {sparknlp.version()}")

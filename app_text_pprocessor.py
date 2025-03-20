@@ -1,35 +1,23 @@
-
-from sparknlp.base import DocumentAssembler
-from sparknlp.annotator import Tokenizer, Normalizer,StopWordsCleaner, LemmatizerModel,BertSentenceEmbeddings
-from pyspark.ml.feature import HashingTF, IDF
-from pyspark.ml import Pipeline
-from pyspark.sql.functions import udf, col
-from pyspark.sql.types import ArrayType,StringType
+import os
+import numpy as np
+import pandas as pd
+from sparknlp.base import DocumentAssembler 
+from sparknlp.annotator import Tokenizer, Normalizer,BertSentenceEmbeddings,Word2VecApproach
+from pyspark.ml import Pipeline, PipelineModel
+from pyspark.sql.functions import udf
+from pyspark.sql.types import StringType
 import json
 import re
 
 
-
-
 class TextCleaner:
-    def __init__(self, spark, use_lemma=True, use_stop_words=True, expand_contractions=True):
+    def __init__(self, spark,expand_contractions=True):
         self.spark = spark
-        self.use_lemma = use_lemma
-        self.use_stop_words = use_stop_words
         self.exp_contractions = expand_contractions
-        self.num_features = 5000
+        
 
-        with open("/content/drive/MyDrive/NeoNexus/contractions.json", "r") as file:
+        with open("./contractions.json", "r") as file:
             contractions_dict = json.load(file)
-
-        default_stopwords = StopWordsCleaner.loadDefaultStopWords("english")
-        words_to_keep = {
-            "not", "no", "never", "none", "nobody", "nowhere", "nothing", "neither", "nor",
-            "cannot", "without", "do not", "does not", "did not", "is not", "are not",
-            "was not", "were not", "has not", "have not", "had not", "should not",
-            "would not", "must not", "might not", "could not", "need not", "but", "should not", "if"
-        }
-        filtered_stopwords = list(set(default_stopwords) - words_to_keep)
 
         contractions_broadcast = self.spark.sparkContext.broadcast(contractions_dict)
         broadcast_value = contractions_broadcast.value
@@ -38,8 +26,9 @@ class TextCleaner:
         self.text_cleaning_udf = udf(lambda text: TextCleaner.clean_text(text, broadcast_value, expand_bool), StringType())
 
         self.document_assembler = DocumentAssembler() \
-            .setInputCol("reviewText") \
-            .setOutputCol("document")
+            .setInputCol("text") \
+            .setOutputCol("document") \
+            .setCleanupMode("shrink")
 
         self.tokenizer = Tokenizer() \
             .setInputCols(["document"]) \
@@ -49,36 +38,29 @@ class TextCleaner:
             .setInputCols(["tokens"]) \
             .setOutputCol("normalized") \
             .setLowercase(True)
-
-        if use_stop_words:
-            self.stopwords_cleaner = StopWordsCleaner() \
-                .setInputCols(["normalized"]) \
-                .setOutputCol("filtered_tokens") \
-                .setStopWords(filtered_stopwords) \
-                .setCaseSensitive(False)
-            stopwords_output = "filtered_tokens"
-        else:
-            stopwords_output = "normalized"
+        
 
         self.model_dir = "./models/lemma_antbnc"
 
-        if use_lemma:
-            self.lemmatizer = LemmatizerModel.load(self.model_dir) \
-                .setInputCols([stopwords_output]) \
-                .setOutputCol("lemmatized")
-            lemma_output = "lemmatized"
-        else:
-            lemma_output = stopwords_output
-
-        self.bert_embedder = BertSentenceEmbeddings.pretrained("sent_small_bert_L2_128", "en") \
+        self.bert_embedder = BertSentenceEmbeddings.pretrained("sent_small_bert_L8_512", "en") \
             .setInputCols(["document"]) \
-            .setOutputCol("bert_embeddings")
+            .setOutputCol("bert_embeddings") \
+            .setMaxSentenceLength(128)
 
-        self.extract_lemma_udf = udf(lambda x: [token.result for token in x] if x else [], ArrayType(StringType()))
+        self.pipelin_general_path = "./models/w2v/pipelines/pipeline_general"
+        self.pipelin_w2v_path = "./models/w2v/pipelines/pipeline_w2v"
+               
+        self.word2vec = Word2VecApproach() \
+            .setInputCols(["normalized"]) \
+            .setOutputCol("word2vec_embeddings") \
+            .setVectorSize(350) \
+            .setMinCount(4) \
+            .setWindowSize(6) \
+            .setMaxIter(15) \
+            .setStepSize(0.025 ) \
+            .setMaxSentenceLength(1000) \
+            .setSeed(42)
 
-        self.vector_tfidf = HashingTF(inputCol="lemmas_array", outputCol="raw_features", numFeatures=self.num_features)
-        self.idf = IDF(inputCol="raw_features", outputCol="tfidf_features")
-        
 
     @staticmethod
     def clean_text(text, contractions_dict, expand_contractions):
@@ -94,19 +76,38 @@ class TextCleaner:
         text = text.strip()
         return text if text else "UNK"
 
+    def model_exists(self,path):
+      return os.path.exists(path)
+
     def clean_dataframe(self, df):
-        df = df.withColumn("reviewText", self.text_cleaning_udf(df["reviewText"]))
-        self.pipeline = Pipeline(stages=[
+      print("🚀 Iniciando proceso de limpieza de datos...")
+      df = df.withColumn("text", self.text_cleaning_udf(df["text"]))
+      if self.model_exists(self.pipelin_general_path):
+          pipeline_general = PipelineModel.load(self.pipelin_general_path)
+      else:
+          self.pipeline = Pipeline(stages=[
             self.document_assembler,
             self.tokenizer,
             self.normalizer,
-            self.stopwords_cleaner if self.use_stop_words else None,
-            self.lemmatizer if self.use_lemma else None,
-            self.bert_embedder
-        ])
-        df=self.pipeline.fit(df).transform(df)
-        df = df.withColumn("lemmas_array", col("lemmatized").getItem("result"))
-        self.vector_tfidf = HashingTF(inputCol="lemmas_array", outputCol="raw_features", numFeatures=self.num_features)
-        self.idf = IDF(inputCol="raw_features", outputCol="tfidf_features")
-        self.pipeline_tfidf = Pipeline(stages=[self.vector_tfidf, self.idf])
-        return self.pipeline_tfidf.fit(df).transform(df)
+            self.bert_embedder,
+           ])
+          pipeline_stages = self.pipeline.getStages() 
+          pipeline_stages = [stage for stage in pipeline_stages if stage is not None]
+          pipeline_general = self.pipeline.fit(df)
+          pipeline_general.write().overwrite().save(self.pipelin_general_path)
+      print("🚀 Iniciando Pipeline General...")
+      df= pipeline_general.transform(df)
+      print("🚀 Iniciando Pipeline Word2Vec...")
+      
+   
+      if self.model_exists(self.pipelin_w2v_path):
+          pipeline_w2v = PipelineModel.load(self.pipelin_w2v_path)
+      else:
+          pipeline_w2v = Pipeline(stages=[
+              self.word2vec
+          ])
+          pipeline_w2v = pipeline_w2v.fit(df)
+          pipeline_w2v.write().overwrite().save(self.pipelin_w2v_path)
+
+      df = pipeline_w2v.transform(df)
+      return df
