@@ -1,6 +1,9 @@
-### 📝 TextCleaner - Limpieza y Normalización de Texto en Spark NLP
+### 📝 Análisis de Sentimiento en Redes Sociales aplicando Spark NLP
 
 #### 📌 Descripción
+Sistema en la nube para el análisis de sentimientos en redes sociales (Twitter), permitiendo evaluar la percepción de una marca y optimizar estrategias de marketing 
+
+#### 📌 Estructura de Clases
 `TextCleaner (app_text_pprocessor.py)` es una clase que implementa un pipeline de procesamiento de texto basado en **Spark NLP** que aplica varias transformaciones para limpiar, normalizar y optimizar texto en tareas de NLP.
 
 `Embeddings & EmbeddingsTrainner (app_embeddings.py)` son clases cuya responsabilidad es dado un spark dataframe retornar los embeddings **bert_numpy**, **w2c_numpy** y **labels** en dependencia si es para inferencia o para entrenamiento.
