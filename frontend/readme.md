@@ -58,3 +58,148 @@ Para ejecutar este proyecto, necesitas tener instalado lo siguiente:
 3. Ajusta los parámetros avanzados si es necesario.
 4. Haz clic en "Scrape Tweets".
 5. Visualiza los resultados en la interfaz de Streamlit.
+
+
+## Puntos Clave de Integración
+
+### 🔧 Variables de Configuración (Revisar antes de desplegar)
+backend.py
+```python backend.py
+DEVELOPMENT_MODE = True  # Cambiar a False para scraping real
+FAKE_DATASET_PATH = "dataset_nvidia.csv"  # Datos de prueba
+APIFY_TOKEN = os.getenv("APIFY_TOKEN")  # Necesario para producción
+
+# En frontend.py
+BACKEND_URL = "http://localhost:5000/process"  # Actualizar en producción
+```
+
+### 🔄 Flujo de Datos
+Frontend (Streamlit) → [JSON] → Backend (Flask) → [Scraper/NLP] → → [Respuesta JSON] → Frontend (Visualización)
+
+
+### 📦 Estructura de Comunicación
+**Frontend → Backend (POST /process)**
+```json
+{
+  "search_terms": "#Python",
+  "start_date": "2024-01-01",
+  "end_date": "2024-01-31",
+  "max_items": 500,
+  "tweet_language": "es",
+  "min_favorites": 5
+}
+Backend → Frontend (Respuesta)
+
+{
+  "status": "completed",
+  "summary": {
+    "positive_count": 120,
+    "negative_count": 80
+  },
+  "example_tweets": {
+    "positive": [{"text": "Me encanta programar!", "sentiment": "positive"}],
+    "negative": [{"text": "No me gusta programar", "sentiment": "negative"}]
+  }
+}
+```
+
+## ⚙️ Funciones Críticas
+Procesamiento en Backend 
+
+backend.py
+```python
+@app.route('/process', methods=['POST'])
+def process_tweets():
+    # 1. Recibir datos del frontend
+    data = request.json
+    
+    # 2. Modo desarrollo vs producción
+    if DEVELOPMENT_MODE:
+        df = simulate_scraping(data)  # Usa FAKE_DATASET_PATH
+    else:
+        df = real_scrape(data)  # Requiere APIFY_TOKEN
+    
+    # 3. Análisis de sentimientos
+    df = perform_sentiment_analysis(df)
+    
+    # 4. Formatear respuesta
+    return jsonify({
+        "summary": generate_summary(df),
+        "example_tweets": extract_examples(df)
+    })
+```
+
+Manejo en Frontend 
+
+frontend.py
+
+```python
+def display_results():
+    # 1. Enviar solicitud al backend
+    response = requests.post(BACKEND_URL, json=st.session_state.data)
+    
+    # 2. Procesar respuesta
+    if response.status_code == 200:
+        result = response.json()
+        show_metrics(result['summary'])
+        show_chart(result['summary'])
+        show_examples(result['example_tweets'])
+
+```
+🚀 Checklist para Despliegue
+Modo Desarrollo:
+
+Mantener DEVELOPMENT_MODE = True
+Asegurar que dataset_nvidia.csv exista
+No se requiere token de API
+Modo Producción:
+
+Cambiar DEVELOPMENT_MODE = False
+Configurar variable de entorno APIFY_TOKEN
+Actualizar BACKEND_URL si se despliega remotamente
+Para Escalar:
+
+Para muchos tweets (>1k), aumentar timeout:
+
+backend.py
+
+app.run(debug=True, threaded=True, timeout=600)
+Considerar usar Redis para procesamiento asíncrono
+🔗 Conexión con otros Componentes
+# Para integrar con NLP:
+
+Modificar:
+```python
+perform_sentiment_analysis()
+ en 
+backend.py
+ para:
+Llamara servicio NLP en lugar de TextBlob
+Mantener la misma estructura de respuesta:
+{
+    "sentiment": "positive"|"negative",
+    "text": "texto original"
+}
+```
+
+Ejemplo de integración:
+
+backend.py
+
+```python
+# Reemplazar TextBlob con modelo
+def get_sentiment(text):
+    # Llamar al modelo NLP aquí
+    return nlp_model.predict(text)
+```
+📊 Estructura de Datos
+Columnas requeridas en CSV para modo desarrollo:
+
+```
+author/id,createdAt,text,quoteCount,replyCount,retweetCount
+```
+
+🛠 Solución de Problemas
+Errores de conexión: Verificar que BACKEND_URL coincida
+Resultados vacíos: Revisar logs del scraper
+Lentitud: Reducir max_items en el formulario
