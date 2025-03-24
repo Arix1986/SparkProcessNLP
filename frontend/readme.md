@@ -1,5 +1,7 @@
 # Frontend - Análisis de Sentimientos de Twitter
 
+Video:  [Link a Google Drive](https://drive.google.com/file/d/1ksrJAg3GBKwjYtjWS7p-z5UxODcmP9Sn/view?usp=sharing)
+
 Este repositorio contiene el código del frontend y backend para un sistema de análisis de sentimientos de tweets. El frontend está desarrollado con **Streamlit** y el backend con **Flask**. El backend se comunica con un scraper de Twitter para obtener tweets y realizar un análisis de sentimientos básico.
 
 ## Estructura del Proyecto
