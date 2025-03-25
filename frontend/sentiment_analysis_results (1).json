@@ -1,0 +1,1042 @@
+{
+    "example_tweets": {
+        "negative": [
+            {
+                "sentiment": "negative",
+                "text": "LOGITECH G CLOUD!\n\nAccess Cloud Gaming Services:\n- Xbox Cloud or Remote Play\n- Nvidia GeForce Now\n- Steam Link\n- Google Play\n\n7 inch Screen \n- 1080P Touch Screen (60Hz)\n\n12 Hour Battery Life\n\nAndroid OS\n\n64GB Hard Drvie (Can Expand via SD card)\n\nOctober 17th 2022\n $299 https://t.co/4AhvCoyirJ"
+            },
+            {
+                "sentiment": "negative",
+                "text": "Here's our thoughts on the expensive GeForce RTX 40 series Nvidia announced earlier today\n\nhttps://t.co/O54GO3eAEj https://t.co/zqvAjQwo5L"
+            },
+            {
+                "sentiment": "negative",
+                "text": "People are NOT happy with the NVIDIA 40 series GPUs... \ud83d\udc40\n\nhttps://t.co/ccCFSFtoFX"
+            },
+            {
+                "sentiment": "negative",
+                "text": "NVIDIA lost EVGA as a partner and, immediately and like clockwork, every other partner introduced some of the strangest card marketing we've ever seen: https://t.co/ckeo2Yvn7f"
+            },
+            {
+                "sentiment": "negative",
+                "text": "LOGITECH G CLOUD!\n\nAccess Cloud Gaming Services:\n- Xbox Cloud or Remote Play\n- Nvidia GeForce Now\n- Steam Link\n- Google Play\n\n7 inch Screen \n- 1080P Touch Screen (60Hz)\n\n12 Hour Battery Life\n\nAndroid OS\n\n64GB Hard Drvie (Can Expand via SD card)\n\nOctober 17th 2022\n $299 https://t.co/4AhvCoyirJ"
+            }
+        ],
+        "positive": [
+            {
+                "sentiment": "positive",
+                "text": "Our First #BeyondFast Card Spotlight: GeForce RTX 4090 Founders Edition\n \n\u26ab 3rd Gen RTX &amp; RT Cores\n\u26ab 4th Gen Tensor Cores (2x AI Perf)\n\u26ab Superfast G6X memory\n \nWant your chance to win this card?\n\nRT + Reply with the first game you would crank to max settings (use #BeyondFast!) https://t.co/CrbfWycdn7"
+            },
+            {
+                "sentiment": "positive",
+                "text": "Who wants to learn AI, accelerated computing, data science, graphics and simulation and earn an @NVIDIA certificate?\n\nThese courses usually cost $500, but I'M GIVING THEM OUT FOR FREE. Doing this later tonight. Stay tuned \u2728"
+            },
+            {
+                "sentiment": "positive",
+                "text": "Did @nvidia just steal our jobs?! RTX Remix is a new modding tool capable of creating AI generated textures and assets you import from games as seen here on TES III Morrowind\ud83e\udd2f\nWill this kill modding or give people tools to make more types of mods? https://t.co/HE3dMvJhZy"
+            },
+            {
+                "sentiment": "positive",
+                "text": ".@nvidia announced the re-architecture of Maxine for cloud-native microservices along with its new features. One of them uses AI to maintain eye contact in video conferences. \n\nSee more: https://t.co/vghmDPgI0s \n\n#AI #ArtificialIntelligence #nvidia #research https://t.co/NGu7QINmas"
+            },
+            {
+                "sentiment": "positive",
+                "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/RUFW1mXMPW https://t.co/mDF8es2sW7"
+            }
+        ]
+    },
+    "summary": {
+        "negative_count": 24,
+        "positive_count": 223
+    },
+    "tweets": [
+        {
+            "sentiment": "positive",
+            "text": "Our First #BeyondFast Card Spotlight: GeForce RTX 4090 Founders Edition\n \n\u26ab 3rd Gen RTX &amp; RT Cores\n\u26ab 4th Gen Tensor Cores (2x AI Perf)\n\u26ab Superfast G6X memory\n \nWant your chance to win this card?\n\nRT + Reply with the first game you would crank to max settings (use #BeyondFast!) https://t.co/CrbfWycdn7"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Who wants to learn AI, accelerated computing, data science, graphics and simulation and earn an @NVIDIA certificate?\n\nThese courses usually cost $500, but I'M GIVING THEM OUT FOR FREE. Doing this later tonight. Stay tuned \u2728"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Did @nvidia just steal our jobs?! RTX Remix is a new modding tool capable of creating AI generated textures and assets you import from games as seen here on TES III Morrowind\ud83e\udd2f\nWill this kill modding or give people tools to make more types of mods? https://t.co/HE3dMvJhZy"
+        },
+        {
+            "sentiment": "positive",
+            "text": ".@nvidia announced the re-architecture of Maxine for cloud-native microservices along with its new features. One of them uses AI to maintain eye contact in video conferences. \n\nSee more: https://t.co/vghmDPgI0s \n\n#AI #ArtificialIntelligence #nvidia #research https://t.co/NGu7QINmas"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/RUFW1mXMPW https://t.co/mDF8es2sW7"
+        },
+        {
+            "sentiment": "positive",
+            "text": "At @NVIDIAGTC, our CEO Jensen Huang unveiled new chips based on the Ada Lovelace GPU architecture, advances to our computing platforms, and new cloud services to further the era of AI and the #metaverse that will transform every industry. #GTC22 https://t.co/T5kFqX6wnc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "1/ @NVIDIA's GTC 97-min keynote is worth watching.\nhttps://t.co/Vo0p4IxUwc\n\nLOTS of cutting edge XR &amp; AI tech &amp; announcements.\n\nThread \ud83d\udc47\ud83e\uddf5breaking down how spatial computing (aka the consumer Metaverse) will be built on top of the enterprise uses of XR &amp; digital twins they show. https://t.co/7vCPmQHmTG"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/4c9RgoOAEE https://t.co/DsyNHjQKyh"
+        },
+        {
+            "sentiment": "positive",
+            "text": "At #GTC22, our CEO Jensen Huang unveiled new chips based on the Ada Lovelace GPU architecture, advances to our computing platforms, and new cloud services to further the era of #AI and the #metaverse that will transform every industry. https://t.co/B5aCktCbbL"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Announced at #GTC22: #NVIDIAStudio updates accelerate AI for content creation. \u2728\n\n\u2705 New, #BeyondFast, GeForce RTX 40 series GPUs\n\u2705 DLSS 3\n\u2705 RTX Remix, an @NVIDIAOmniverse app\n\u2705 Dual AV1 Encoders\n\nPlus, deep-dive into the NVIDIA Racer RTX experience \ud83d\udc49 https://t.co/eS8wtgquVN https://t.co/wpnYDEh7Uw"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/0tRGB0WTvD https://t.co/adFeVE5ng4"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Join us now as our CEO Jensen Huang unveils real-world breakthroughs for the era of #AI and the metaverse. #GTC22 https://t.co/AxvuQzLFgr"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Join Jensen's keynote Tuesday, September 20 to see the breakthroughs in #AI that are transforming every industry. See how NVIDIA's latest advances are helping us take on the world's greatest challenges--together. #GTC22. https://t.co/koKB69ZCmc https://t.co/MDCz5z1IH0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\u26a0 New GeForce Garage build \u26a0\n\nOur first #BeyondFastBuild featuring the GeForce RTX 4090.  \n\n\ud83d\udd28: @liquidhaus https://t.co/imjzr48i7O"
+        },
+        {
+            "sentiment": "positive",
+            "text": "There are over 35+ games &amp; apps upcoming with support for the incredible performance of DLSS 3\n\nLearn more \u27a1\ufe0f https://t.co/ibZ21qZAhk https://t.co/5QVSo8Xucd"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udd13 More frames unlocked \ud83d\udd13\n\nOur friends @PlayOverwatch 2 increased the framerate cap to 600 FPS for our new #BeyondFast GeForce RTX 40 Series GPU.\n\nWatch the first Overwatch 2 gameplay on GeForce RTX 4090 with NVIDIA Reflex.\n\n#FramesWinGames https://t.co/CNZzefc6a1"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Playing Cyberpunk 2077 on @LogitechG CLOUD via Geforce Now #LogiPLAY https://t.co/KSEzdKTm2F"
+        },
+        {
+            "sentiment": "negative",
+            "text": "LOGITECH G CLOUD!\n\nAccess Cloud Gaming Services:\n- Xbox Cloud or Remote Play\n- Nvidia GeForce Now\n- Steam Link\n- Google Play\n\n7 inch Screen \n- 1080P Touch Screen (60Hz)\n\n12 Hour Battery Life\n\nAndroid OS\n\n64GB Hard Drvie (Can Expand via SD card)\n\nOctober 17th 2022\n $299 https://t.co/4AhvCoyirJ"
+        },
+        {
+            "sentiment": "positive",
+            "text": "You asked. We answered. Find the answers to your top GeForce RTX 40 Series questions here.\n\nQ&amp;A \ud83d\udc49 https://t.co/oAVZw1Xvbl https://t.co/hwhYzoMzQC"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Come fly with NVIDIA DLSS 3 in Microsoft Flight Simulator for unparalleled performance. \n\nComing soon. #BeyondFast https://t.co/8vqBnq0aJx"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Experience Cyberpunk 2077 like never before with the stunning beauty of new Ray Tracing: Overdrive Mode &amp; up to 4X performance increase with DLSS 3.\n\n#BeyondFast https://t.co/naw5bAEepi"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Logitech\u2019s G Cloud Gaming Handheld arrives in October for $349.99. It has Xbox Cloud Gaming and Nvidia GeForce pre-installed, and it's all powered by Android. Full specs and details here: https://t.co/c09DtcgHqq https://t.co/DKR2lDBkli"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Thank you to @LogitechG I've spent the past few days with their new CLOUD handheld gaming system and so far it's great!\n\nPlaying games via Xbox Cloud Gaming, Nvidia GeForce Now and Steam Link\n\nI'll have more thoughts on an upcoming Xcast and GTR https://t.co/2VOByvXvgy"
+        },
+        {
+            "sentiment": "positive",
+            "text": "We just announced the GeForce RTX 40 Series and we're celebrating by giving you UNLIMITED chances to win one\n\nHere\u2019s your first chance to win:\n\n1. RT ANY GeForce post \n2. Tag a friend\n3. Comment #BeyondFast\n\nRead sweepstakes details \ud83d\udc49 https://t.co/kJmI8oUuiS https://t.co/L3wCDsnNiV"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/RUFW1mXMPW https://t.co/mDF8es2sW7"
+        },
+        {
+            "sentiment": "negative",
+            "text": "Here's our thoughts on the expensive GeForce RTX 40 series Nvidia announced earlier today\n\nhttps://t.co/O54GO3eAEj https://t.co/zqvAjQwo5L"
+        },
+        {
+            "sentiment": "positive",
+            "text": "My first computer was about 10 Kiloflops: the Apple ][ ran at 1 MHz but had to do floating point in software using only shifts and addition, so around 100 cycles per flop. GeForce 4090 represents a 10,000,000,000x gain in 40 years."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing The NVIDIA GeForce RTX 4090.\n\nAn enormous leap in performance, efficiency, and AI-powered graphics. \n\nhttps://t.co/U9SoQe3VBD https://t.co/rhrSnIlj4n"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Enjoy this cinematic teaser for Racer RTX. Available this November, Racer RTX is an interactive physics-accurate simulation featuring the most realistically rendered RC cars ever built in @nvidiaomniverse.\n\nExperience the #BeyondFast power of GeForce RTX 40 series. https://t.co/tu5e3Q0wWc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Prediction based on rumored TSE scores\n\nGeForce RTX 4090\n+86% perf, +7% price \ud83d\udc4d\n\nGeForce RTX 4080 16G\n+44% TSE, \u00b10 price \ud83d\ude36\n\nGeForce RTX 4080 12G\n+25% TSE, +29% price \ud83e\udd2e\n\nhttps://t.co/mzwKctkLJI https://t.co/Vqse0mWV3X"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Here is a picture of ALL The NVIDIA GeForce 4090s \ud83d\udc40 https://t.co/DYJ7YY35lI"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Full sweepstakes details, terms, and conditons: https://t.co/STLYrDNFl1"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Our First #BeyondFast Card Spotlight: GeForce RTX 4090 Founders Edition\n \n\u26ab 3rd Gen RTX &amp; RT Cores\n\u26ab 4th Gen Tensor Cores (2x AI Perf)\n\u26ab Superfast G6X memory\n \nWant your chance to win this card?\n\nRT + Reply with the first game you would crank to max settings (use #BeyondFast!) https://t.co/CrbfWycdn7"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Who wants to learn AI, accelerated computing, data science, graphics and simulation and earn an @NVIDIA certificate?\n\nThese courses usually cost $500, but I'M GIVING THEM OUT FOR FREE. Doing this later tonight. Stay tuned \u2728"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\u26a0 New GeForce Garage build \u26a0\n\nOur first #BeyondFastBuild featuring the GeForce RTX 4090.  \n\n\ud83d\udd28: @liquidhaus https://t.co/imjzr48i7O"
+        },
+        {
+            "sentiment": "positive",
+            "text": "BEST NVIDIA Control Panel Settings for COD Modern Warfare 2 PC https://t.co/fYCmao5Ear"
+        },
+        {
+            "sentiment": "positive",
+            "text": "BEST NVIDIA Color Settings for Modern Warfare 2 Beta https://t.co/sNBFwsoxGq"
+        },
+        {
+            "sentiment": "positive",
+            "text": "If you're playing on PC with AMD or NVIDIA GPU, please make sure you update the drivers before playing."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Make sure you update your AMD/NVIDIA Graphic Drivers\n\nAMD 22.9.1\nNVIDIA: 516.59 https://t.co/8GHAlt7leS"
+        },
+        {
+            "sentiment": "positive",
+            "text": "There are over 35+ games &amp; apps upcoming with support for the incredible performance of DLSS 3\n\nLearn more \u27a1\ufe0f https://t.co/ibZ21qZAhk https://t.co/5QVSo8Xucd"
+        },
+        {
+            "sentiment": "negative",
+            "text": "People are NOT happy with the NVIDIA 40 series GPUs... \ud83d\udc40\n\nhttps://t.co/ccCFSFtoFX"
+        },
+        {
+            "sentiment": "positive",
+            "text": "So, all the new Nvidia cards have Vapor Chamber and flowthrough air design. Glad we at @SapphireTech could show our competition how to use these features effectively. The image below shows our using flow through designs for max effect FIVE YEARS AGO. https://t.co/JlnagTfsmd"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udd13 More frames unlocked \ud83d\udd13\n\nOur friends @PlayOverwatch 2 increased the framerate cap to 600 FPS for our new #BeyondFast GeForce RTX 40 Series GPU.\n\nWatch the first Overwatch 2 gameplay on GeForce RTX 4090 with NVIDIA Reflex.\n\n#FramesWinGames https://t.co/CNZzefc6a1"
+        },
+        {
+            "sentiment": "negative",
+            "text": "NVIDIA lost EVGA as a partner and, immediately and like clockwork, every other partner introduced some of the strangest card marketing we've ever seen: https://t.co/ckeo2Yvn7f"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing RTX Remix. The best way to remaster classic video games you love with RTX. \ud83c\udfae\ud83d\udd19\n\nLearn more \ud83d\udc49 https://t.co/5iwwdLgCGx https://t.co/0lih2stGJe"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Relive the critically acclaimed and award-winning game Portal... \n\nReimagined with ray tracing, the groundbreaking AI-accelerated performance of NVIDIA DLSS 3, and the best responsiveness with NVIDIA Reflex. https://t.co/PRcmSp1Ue3"
+        },
+        {
+            "sentiment": "positive",
+            "text": "RUMOR: A future Switch console might utilize more powerful Nvidia technology https://t.co/Kc99qn2jUi https://t.co/b6ZDgsctMN"
+        },
+        {
+            "sentiment": "negative",
+            "text": "LOGITECH G CLOUD!\n\nAccess Cloud Gaming Services:\n- Xbox Cloud or Remote Play\n- Nvidia GeForce Now\n- Steam Link\n- Google Play\n\n7 inch Screen \n- 1080P Touch Screen (60Hz)\n\n12 Hour Battery Life\n\nAndroid OS\n\n64GB Hard Drvie (Can Expand via SD card)\n\nOctober 17th 2022\n $299 https://t.co/4AhvCoyirJ"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia CEO makes it clear that high PC graphics card prices are here to stay: https://t.co/1luprLMpMm https://t.co/63hbfSZKmN"
+        },
+        {
+            "sentiment": "positive",
+            "text": "You asked. We answered. Find the answers to your top GeForce RTX 40 Series questions here.\n\nhttps://t.co/ajgxdXjWpp"
+        },
+        {
+            "sentiment": "negative",
+            "text": "If you are getting an error when you launch the game this video will help you fix that issue. \n\nPoor @RealDotCR was trying for hours to fix the problem. #MWII #MW2 \n\nSoftware to download: https://t.co/zGsZ0yWfVn https://t.co/rqPnoRkOyb"
+        },
+        {
+            "sentiment": "positive",
+            "text": "If you're playing on PC with AMD or NVIDIA GPU, please make sure you update the drivers before playing."
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udd13 More frames unlocked \ud83d\udd13\n\nOur friends @PlayOverwatch 2 increased the framerate cap to 600 FPS for our new #BeyondFast GeForce RTX 40 Series GPU.\n\nWatch the first Overwatch 2 gameplay on GeForce RTX 4090 with NVIDIA Reflex.\n\n#FramesWinGames https://t.co/CNZzefc6a1"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Miners in 2010 when the first bitcoin GPU mining software was released. https://t.co/Wuhs5SPvCI"
+        },
+        {
+            "sentiment": "negative",
+            "text": "thinking about that time AMD sent an autistic kid a bunch of monitors and a new GPU, only for his brother to steal all of that and brag about it on Reddit. https://t.co/SCpuYOecPc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Please look at the fine print. I know a lot of you are excited.\n\nRTX 3090ti vs RTX 4090 https://t.co/ss3qAaqOtT"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udd13 More frames unlocked \ud83d\udd13\n\nOur friends @PlayOverwatch 2 increased the framerate cap to 600 FPS for our new #BeyondFast GeForce RTX 40 Series GPU.\n\nWatch the first Overwatch 2 gameplay on GeForce RTX 4090 with NVIDIA Reflex.\n\n#FramesWinGames https://t.co/YDIv6OuTSO"
+        },
+        {
+            "sentiment": "positive",
+            "text": "One of the new benchmark for measuring a GPU\u2019s performance is: \u201cHow many seconds does it take to generate a #StableDiffusion image.\u201d \ud83d\udd25"
+        },
+        {
+            "sentiment": "positive",
+            "text": "What if we gave away an RTX 4090? Let me sleep on it."
+        },
+        {
+            "sentiment": "positive",
+            "text": "As of this leak, we now know the following details about the next Nintendo Switch console:\n\n- T239 SoC \n- 8-core CPU, likely to be ARM Cortex A78C/A78\n- Ampere-based GPU that may incorporats Lovelace features \n- The 2nd gen Switch graphics API references DLSS 2.2 and raytracing"
+        },
+        {
+            "sentiment": "negative",
+            "text": "This post is to help your timeline trust me. Here is a PC with a chicken on it. https://t.co/KYehH8LJkX"
+        },
+        {
+            "sentiment": "positive",
+            "text": "At @NVIDIAGTC, our CEO Jensen Huang unveiled new chips based on the Ada Lovelace GPU architecture, advances to our computing platforms, and new cloud services to further the era of AI and the #metaverse that will transform every industry. #GTC22 https://t.co/T5kFqX6wnc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "The new line up of the Nvidia family. So you can see we might not see anymore GPUs from the 40 series this year. https://t.co/YO3c6tKAaF"
+        },
+        {
+            "sentiment": "positive",
+            "text": "@LinusTech Time to just make the GPU have its own built-in PSU, lol https://t.co/pk0WxanXpZ"
+        },
+        {
+            "sentiment": "positive",
+            "text": "ASUS knows that the RTX 4090 is so fucking huge, this one of the press release images of their RTX 4090 card\n\nA Mini-ITX motherboard hanging off of the GPU https://t.co/QEwR2sYsqP"
+        },
+        {
+            "sentiment": "negative",
+            "text": "And yes, sadly you do need an RTX GPU to use this (any RTX series, even laptop cards). GTX cards or older are not supported.\n\nMore news to follow over the coming weeks!! \u2728 Sorry for the delay and Thank You for being patient!! \ud83d\ude4f\ud83e\udd74\ud83d\udc96\ud83d\udc96\ud83d\udc96"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\u3010\ud83d\udce2\u3011I've been working with the amazing people at @NVIDIAStudio over the last few months to bring their newly released NVIDIA Broadcast face tracking to VTube Studio!! \u2728\n\nIt works on any RTX-series GPU and is ACCURATE and HIGHLY PERFORMANT \u2728\n\nWill be released early October! \ud83c\udf42 https://t.co/4dGl5ojqvp"
+        },
+        {
+            "sentiment": "negative",
+            "text": "holy fuck GPU prices dropped. If they're still decently priced yah boi gonna get a 3070 in the next month or so. I thought they were still up near $1k but those bastards are WAY lower. \n\nfuck you Crypto market! Hope you're burning in hell!"
+        },
+        {
+            "sentiment": "positive",
+            "text": "THE NVIDIA GEFORCE RTX 4090 IS HERE!\n\u2705 World's most advanced GPU\n\u2705 24GB G6X memory\n\u2705 8K60fps game recording\n\u2705 Significantly improved raytracing\n\u2705 More than 2x as powerful as 3090ti\n\u2705 $1599 https://t.co/KvoAmxAnDa"
+        },
+        {
+            "sentiment": "positive",
+            "text": "At #GTC22, our CEO Jensen Huang unveiled new chips based on the Ada Lovelace GPU architecture, advances to our computing platforms, and new cloud services to further the era of #AI and the #metaverse that will transform every industry. https://t.co/B5aCktCbbL"
+        },
+        {
+            "sentiment": "negative",
+            "text": "nVidia is going to be in serious trouble following the announcement of pricing for the 4090, 4080 and the 407-, er excuse me, 4080 12gb. A short thread. https://t.co/f0YsQTrgGp"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Did @nvidia just steal our jobs?! RTX Remix is a new modding tool capable of creating AI generated textures and assets you import from games as seen here on TES III Morrowind\ud83e\udd2f\nWill this kill modding or give people tools to make more types of mods? https://t.co/HE3dMvJhZy"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA expects to get away with this... https://t.co/6HQbHOpq1s"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Bring your stream dreams to life. \ud83d\udd34\n\nGeForce RTX 40 Series feature our 8th-generation NVIDIA video encoder, now with support for AV1.\n\nAV1 improves encoding efficiency and enables HDR, unlocking next-level experiences for streamers and viewers.\n\nhttps://t.co/TurpAmSuFB"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83c\uddfa\ud83c\uddf8 Used Asus Tuf Dash F15\n\nPrice: N700, 000\n\nSpecs:\nAsus Tuf Dash F15\nIntel core i7 \n11th generation\n16gb\n512gb ssd\n6gb nvidia RTX 3060 \n\nSend a DM or WhatsApp:\nhttps://t.co/dKxA7F4PF2\n\nPLEASE KINDLY RETWEET https://t.co/kWQB0XaYkC"
+        },
+        {
+            "sentiment": "positive",
+            "text": "You asked. We answered. Find the answers to your top GeForce RTX 40 Series questions here.\n\nQ&amp;A \ud83d\udc49 https://t.co/oAVZw1Xvbl https://t.co/hwhYzoMzQC"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Check out the beauty of #RTXON with this never before seen footage for A Plague Tale: Requiem. https://t.co/AmYQpXp9sc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Interested in how the Racer RTX cinematic was created? \ud83e\udd14\ud83c\udfce\n\nAt 1pm PST, learn how a team of NVIDIA's expert environmental artists lead by @hexeract01 created #RacerRTX using @substance3d, @adsk3dsmax, @NVIDIAOmniverse, and more.\n\n#GTC22 \ud83d\udc49 https://t.co/Pciyv6uSDp https://t.co/CofHgbXVk6"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Come fly with NVIDIA DLSS 3 in Microsoft Flight Simulator for unparalleled performance. \n\nComing soon. #BeyondFast https://t.co/8vqBnq0aJx"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Experience Cyberpunk 2077 like never before with the stunning beauty of new Ray Tracing: Overdrive Mode &amp; up to 4X performance increase with DLSS 3.\n\n#BeyondFast https://t.co/naw5bAEepi"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA DLSS 3 is coming to Marvel's Spider-Man Remastered on PC!"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Experience amazing performance &amp; incredible visuals in Marvel's Spider-Man Remastered on PC with the AI-enhanced power of NVIDIA DLSS 3.\n\n#SpiderManPC https://t.co/MD0CXAgFNM"
+        },
+        {
+            "sentiment": "positive",
+            "text": "BREAKING: This is the Logitech G Cloud! \u2601\ufe0f\n\nLogitech has joined forces with Xbox and NVIDIA to build the first all-cloud gaming handheld. \n\nDETAILS: https://t.co/GM4C7xnZpm #Logitech #Xbox #XboxGamePass"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Logitech\u2019s G Cloud Gaming Handheld arrives in October for $349.99. It has Xbox Cloud Gaming and Nvidia GeForce pre-installed, and it's all powered by Android. Full specs and details here: https://t.co/c09DtcgHqq https://t.co/DKR2lDBkli"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Thank you to @LogitechG I've spent the past few days with their new CLOUD handheld gaming system and so far it's great!\n\nPlaying games via Xbox Cloud Gaming, Nvidia GeForce Now and Steam Link\n\nI'll have more thoughts on an upcoming Xcast and GTR https://t.co/2VOByvXvgy"
+        },
+        {
+            "sentiment": "positive",
+            "text": "BREAKING: This is the Logitech G Cloud! \u2601\ufe0f\n\nLogitech has joined forces with Xbox and NVIDIA to build the first all-cloud gaming handheld. \n\nDETAILS: https://t.co/Q2zZAciXeB #Xbox #XboxGamePass #LogitechGCloud"
+        },
+        {
+            "sentiment": "positive",
+            "text": "RTX. It's On. \n\nExperience ultimate ray tracing and AI-powered DLSS in today's hottest games! https://t.co/E95uysi2u5"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udd13 More frames unlocked \ud83d\udd13\n\nOur friends @PlayOverwatch 2 increased the framerate cap to 600 FPS for our new #BeyondFast GeForce RTX 40 Series GPU.\n\nWatch the first Overwatch 2 gameplay on GeForce RTX 4090 with NVIDIA Reflex.\n\n#FramesWinGames https://t.co/YDIv6OuTSO"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Step Up To 1440p 360 FPS with GeForce RTX 40 Series.\n\nAnnouncing new Reflex games, products, and technology.\n\n#FramesWinGames \ud83d\udc49 https://t.co/X2HlRAfy7e https://t.co/IMpOYhUhfr"
+        },
+        {
+            "sentiment": "positive",
+            "text": "A better comparison between some of the main specs of the just announced 40-series vs last-gen Nvidia GPUs.\n\nMore info and discussion, including full specs for all cards, as always, on our subreddit: https://t.co/oPVyz8ue3O https://t.co/fy9tsEUNlJ"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/4c9RgoOAEE https://t.co/DsyNHjQKyh"
+        },
+        {
+            "sentiment": "positive",
+            "text": "(PR) ZOTAC unveils GeForce RTX 4090/4080 AMP &amp; Trinity graphics cards \nhttps://t.co/bcj8F6sJIh"
+        },
+        {
+            "sentiment": "positive",
+            "text": "ASUS NVIDIA GEFORCE 4090 sneak peak \ud83d\udc40 https://t.co/1fhagrFVFx"
+        },
+        {
+            "sentiment": "positive",
+            "text": "(PR) ASUS introduces GeForce RTX 4090/4080 ROG STRIX and TUF GPUs \nhttps://t.co/GEMK8UA37b"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Love Gaming and Power The Win with the all-new ZOTAC GAMING GeForce RTX 40 series powered by the NVIDIA Ada Lovelace architecture\n\n#40Series #4090 #Ada #Lovelace #GeForceRTX https://t.co/nbzFe1znXK"
+        },
+        {
+            "sentiment": "positive",
+            "text": "We just announced the GeForce RTX 40 Series and we're celebrating by giving you UNLIMITED chances to win one\n\nHere\u2019s your first chance to win:\n\n1. RT ANY GeForce post \n2. Tag a friend\n3. Comment #BeyondFast\n\nRead sweepstakes details \ud83d\udc49 https://t.co/Ls2liFtB10 https://t.co/AyMK1RKIIO"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Minimum Power Supply I recommend for the GeForce RTX 4090 &amp; 4080:\n\n1200W Gold PSU"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Do we giveaway a GeForce RTX 4090 when they drop?"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Get ready to enjoy the #beyondfast GeForce RTX 40 Series graphics cards!\nMSI is proud to introduce the following graphics card series based on the new NVIDIA Ada Lovelace architecture: SUPRIM / SUPRIM LIQUID and GAMING TRIO\ud83d\ude0e\nLearn more: https://t.co/q8jL7cMZo7 \n\n#MSIGraphicsCard https://t.co/0PdJVfLBP0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Announced at #GTC22: #NVIDIAStudio updates accelerate AI for content creation. \u2728\n\n\u2705 New, #BeyondFast, GeForce RTX 40 series GPUs\n\u2705 DLSS 3\n\u2705 RTX Remix, an @NVIDIAOmniverse app\n\u2705 Dual AV1 Encoders\n\nPlus, deep-dive into the NVIDIA Racer RTX experience \ud83d\udc49 https://t.co/eS8wtgquVN https://t.co/wpnYDEh7Uw"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Everything we announced at #GeForceBeyond: \n\n\ud83d\udfe2 GeForce RTX 4090 &amp; 4080 coming soon\n\ud83d\udfe2 New DLSS 3 with Optical Multi Frame Generation\n\ud83d\udfe2 35+ New DLSS 3 Games &amp; Apps\n\ud83d\udfe2 Portal with RTX\n\ud83d\udfe2 Updates to the @NVIDIAStudio suite for all creators\n\nRead more \ud83d\udc49 https://t.co/ie3ksQQlVB https://t.co/wxwMuUCsvP"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Cyberpunk 2077 DLSS 3 performance comparison. \ud83d\ude0d\nCaptured with GeForce RTX 4090 at 3840 x 2160, New Ray Tracing: Overdrive Mode, DLSS 3, pre-release build.\n\nhttps://t.co/JTy21eViDr https://t.co/W2Mw6jAG8w"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Relive the critically acclaimed and award-winning game Portal... \n\nReimagined with ray tracing, the groundbreaking AI-accelerated performance of NVIDIA DLSS 3, and the best responsiveness with NVIDIA Reflex. https://t.co/ksqycIbXox"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA GEFORCE RTX 4090\n\n$1599\nLaunch Date: October 12th\n\n2-4X FASTER than the 3090ti \ud83e\udd2f https://t.co/lgdz9Am2TS"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing The NVIDIA GeForce RTX 4090.\n\nAn enormous leap in performance, efficiency, and AI-powered graphics. \n\nhttps://t.co/4rlSzJWPIa https://t.co/1EUU4DZdns"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA has announced the GeForce RTX 4080, starts at $899.\n\nAvailable in November https://t.co/HUDKNMEk1i"
+        },
+        {
+            "sentiment": "positive",
+            "text": "i\u2019m getting back on the geforce gpu train"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Geforce RTX 4080 starting $1,199 https://t.co/8SU6huPLGM"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Geforce RTX 4090 https://t.co/fzztdoWGCC"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA GeForce RTX 4090 Founders Edition has been pictured \nhttps://t.co/USJc55OHz0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "ASUS ROG Strix 4090 https://t.co/FZJNAa0HqB"
+        },
+        {
+            "sentiment": "positive",
+            "text": "LOL WAIT\u2026.WAIT\n\nIs DLSS 3.0 Literally just Frame Rate Interpolation for games?!!\n\nLOL MOTHER FUCKER IS CHARGING YOU A NEW GPU FOR FAKE FRAME RATES  \n\nNVIDIA CAN KEEP THAT FUCKING TRASH"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Asus ROG Strix 4090 https://t.co/3ajhxEaOka"
+        },
+        {
+            "sentiment": "positive",
+            "text": "PC gamers about to pay $1600 for a new gpu but then complain about $10 more for games and then say we need to fight back against corporations raising the price \ud83d\udc80"
+        },
+        {
+            "sentiment": "positive",
+            "text": "So there will be two models of the 4080\n\n12gb model $899\n16gb model $1199 https://t.co/Omx8fNCJC7"
+        },
+        {
+            "sentiment": "positive",
+            "text": "we're about 2 generations away from the gpu being the actual case that you install the rest of the computer into"
+        },
+        {
+            "sentiment": "positive",
+            "text": "i\u2019m getting back on the geforce gpu train"
+        },
+        {
+            "sentiment": "positive",
+            "text": "We've recently released a PC patch to help address the issue where players with certain GPU drivers crashing on launch, and to help us gather info about remaining crashes.\n\nWe're continuing to investigate this, and will provide more details on further fixes as they're available. https://t.co/r1yWroemY3"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Not to bring more drama but\u2026\n\nPC &gt; Console"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Good night https://t.co/4klke8aQCe"
+        },
+        {
+            "sentiment": "positive",
+            "text": "I miss summer\ud83c\udf34\n\n#GPU_COLORS https://t.co/E4BqXYjILj"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Lightmap generation in ThreeJS using GPU raytracing\n\nhttps://t.co/hui8zr2fMx\n\n#webgl #threejs #gamedev #raytracing https://t.co/LfI2dtKfto"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Here's an example showing how to use the code with Mixed Precision enabled (float16 computation) on NVIDIA GPUs. Only 10s generation time per image (512x512) on the default Colab GPU. No drop in quality.\n\nhttps://t.co/1Dqt5Xfvh3"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Just wanted to let the FGC know since ethereum proof of work ended it\u2019s never been a better time to buy a GPU. Actually never been a better time to build a pc in the last few years. These are rtx 3090 so you know the low end is reasonable. Get to it FGC PC crew. https://t.co/CnQOFbU9ah"
+        },
+        {
+            "sentiment": "positive",
+            "text": "GPUs are NOT just for training deep learning models.\n\nNVIDIA has built libraries for *drop-in* GPU acceleration of common ML tasks:\n\n\u2022 cuPy for NumPy\n\u2022 cuDF for Pandas\n\u2022 cuML for Scikit-Learn\n\u2022 cuGraph for NetworkX\n\nRapid iteration is key. Use your GPU for more than training."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Massive congrats to @GeorgeNotFound on getting his Visa!\n\nNow you can finally play on this monster PC and we can't wait to meet you. https://t.co/MhHQftzIK4"
+        },
+        {
+            "sentiment": "positive",
+            "text": "We are continuing to investigate these crash reports. Updating your GPU drivers to the latest version may alleviate the issue while we continue working towards a fix. https://t.co/T07AQLuNoG"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Waiting for the first IMAGE SYNTHS - With GPU\u2019s and DSP\u2019s, knobs to control all the parameters, LFO\u2019s for creating cyclical seed patterns, touch surface for injecting noise to the render sequences, prompt arpeggiators - everything a performing AI artist would need!"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Have another special for you all. Went ahead and built out a P2000 on our site and we got an RTX 3080 in a $2100 PC.\n\nhttps://t.co/BPIFYcCRxD https://t.co/D7mPtVCrT4"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia\u2019s RTX 40-series is about to launch. These new cards come just as GPU-based mining for crypto is basically dead with the Ethereum merge, Nvidia lost $1 billion in gaming revenue, EVGA has ditched Nvidia, and GPU demand is down. Gonna be an interesting RTX 40-series launch https://t.co/V0f13sY7X0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "There is a virtual NVIDIA Editors Day going on right now.\n\nFull Ada102 is:\n\n- 12 GPCs\n- 72 TPCs\n- 144 SMs\n- 18,432 FP32 units\n- 144 RT Cores (3rd Gen)\n- 576 Tensor Cores (4th Gen) https://t.co/J0GWjGRQiF"
+        },
+        {
+            "sentiment": "positive",
+            "text": ".@nvidia announced the re-architecture of Maxine for cloud-native microservices along with its new features. One of them uses AI to maintain eye contact in video conferences. \n\nSee more: https://t.co/vghmDPgI0s \n\n#AI #ArtificialIntelligence #nvidia #research https://t.co/NGu7QINmas"
+        },
+        {
+            "sentiment": "positive",
+            "text": "We just announced the GeForce RTX 40 Series and we're celebrating by giving you UNLIMITED chances to win one\n\nHere\u2019s your first chance to win:\n\n1. RT ANY GeForce post \n2. Tag a friend\n3. Comment #BeyondFast\n\nRead sweepstakes details \ud83d\udc49 https://t.co/kJmI8oUuiS https://t.co/L3wCDsnNiV"
+        },
+        {
+            "sentiment": "positive",
+            "text": "There is a stupid amount of stuff for me to cover in the future. I am gonna be on Portal RTX, that looks incredible. NVIDIA Racer RTX? Heck yes, I will cover that. Cyberpunk Overdrive Ray Tracing? It replaces all lighting with ray traced lighting. \ud83e\uddd0Of course I am covering it!"
+        },
+        {
+            "sentiment": "positive",
+            "text": "#WolfKissedWednesday | @UbisoftMTL\n\n\ud83c\udfae- #AssassinsCreedValhalla \n\ud83d\udcf7- Nvidia Ansel | Frans Bouma Photo Tools\n\ud83c\udfa8- Lightroom Classic\n\n#VGPUnite #WorldofVP #VPRT #VPEclipse #TheCapturedCollective #VirtualPhotography #ACFinest #AssassinsCreed https://t.co/bLVP4t5ldP"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/RUFW1mXMPW https://t.co/mDF8es2sW7"
+        },
+        {
+            "sentiment": "negative",
+            "text": "Here's our thoughts on the expensive GeForce RTX 40 series Nvidia announced earlier today\n\nhttps://t.co/O54GO3eAEj https://t.co/zqvAjQwo5L"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia employee has confirmed by accident the existence of the Tegra 239 SoC.\n\nThis has been rumored since 2021 to be the SoC that will power the Nintendo Switch's succesor.\n\nThis is the first time we have official word for Nvidia that it actually exists. https://t.co/JXbWqIxunt"
+        },
+        {
+            "sentiment": "negative",
+            "text": "I'd hate to be Nvidia right now - announcing the 4000 series at a time when millions of 3000 series GPUs are hitting the secondary market\n\nI have a 3080ti and it runs every game I can throw at it at max settings on my Samsung 49\" Super Ultra-wide (5120x1440)"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia's new 4080 and 4090 feature DLSS 3.0, a new RTX architecture, and 2-4x faster processing then the 30-series, and they're coming to stores on October 12. https://t.co/nOc2qlY8ci https://t.co/0hLwiIFqxQ"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Excited by NVIDIA\u2019s new OMFG technology. \ud83d\ude00"
+        },
+        {
+            "sentiment": "negative",
+            "text": "@liquidhaus System Specs:\n\n\ud83d\udfe2 GeForce RTX 4090\n\ud83d\udfe2 Cooler Master MasterFrame 700\n\ud83d\udfe2 EVGA Z690 Dark K|NGP|N\n\ud83d\udfe2 Intel i9-12900k\n\ud83d\udfe2 32GB G.Skill Trident Z5 \n\ud83d\udfe2 EVGA SuperNova 1200W\n\ud83d\udfe2 Custom Water Cooling by EK Water Blocks\n\ud83d\udfe2 CableMod Custom Cables"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing The NVIDIA GeForce RTX 4090.\n\nAn enormous leap in performance, efficiency, and AI-powered graphics. \n\nhttps://t.co/U9SoQe3VBD https://t.co/rhrSnIlj4n"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Feast your eyes on the path-traced beauty of Justice in the new Fuyun Court visual showcase, powered by GeForce RTX 40 Series. \n\nLearn More: https://t.co/SS32wgEm1K https://t.co/dvE6WJWaOA"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\u26a0 New GeForce Garage build \u26a0\n\nOur first #BeyondFastBuild  featuring the GeForce RTX 4090.  \n\n\ud83d\udd28: @liquidhaus https://t.co/7sRGU0rjsU"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NEWS: Nvidia unveiled its new computing platform called DRIVE Thor that'd centralize autonomous &amp; assisted driving as well as other digital functions inc in-car entertainment.\n\nNvidia says DRIVE Thor would be able to replace many chips &amp; cables in the car.\nhttps://t.co/DSIfNf4ugK"
+        },
+        {
+            "sentiment": "positive",
+            "text": "At @NVIDIAGTC, our CEO Jensen Huang unveiled new chips based on the Ada Lovelace GPU architecture, advances to our computing platforms, and new cloud services to further the era of AI and the #metaverse that will transform every industry. #GTC22 https://t.co/T5kFqX6wnc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "The new line up of the Nvidia family. So you can see we might not see anymore GPUs from the 40 series this year. https://t.co/YO3c6tKAaF"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udcc2The Future \n    \u2514\u2705 Access granted\n\n#ProjectBeyond https://t.co/lRVS895mMN"
+        },
+        {
+            "sentiment": "positive",
+            "text": "24 hours to GeForce Beyond \ud83d\udc49 https://t.co/T8mOAvw8ev\n\n#ProjectBeyond\n9.20.22\n8AM PDT https://t.co/kotxuIIpYo"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia has all but confirmed its GeForce RTX 40-series launches tomorrow. A 40-hour countdown stream by Nvidia includes Easter eggs like a Discord \u201cUser40\u201d profile with an Ada Lovelace photo \ud83d\udc40 https://t.co/QXIyy3tiXN https://t.co/0DT0BgiCyp"
+        },
+        {
+            "sentiment": "positive",
+            "text": "40 Hours to GeForce Beyond \ud83d\udcfa https://t.co/OQiFvri8nY\n\n#ProjectBeyond\n9.20.22\n8AM PDT https://t.co/jf4lOpxs7X"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Alleged Grand Theft Auto 6 gameplay leaks online, featuring GeForce GTX 1080 \nhttps://t.co/GzVC3GBztv"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Received many kindhearted messages today. Special thank you to all who sent a text, tweet, dm or shared a memory. \ud83d\ude4f"
+        },
+        {
+            "sentiment": "positive",
+            "text": "The death of all GPU mining should see used cards heading to eBay. https://t.co/fporVM5RwE"
+        },
+        {
+            "sentiment": "positive",
+            "text": "I get why the LW people are upset, but as someone who doesn't really care/worry about AI safety I'm glad we are getting cool and uncensorable consumer AI before the \"AI ethics\" people got their grubby totalitarian mitts on my GPU."
+        },
+        {
+            "sentiment": "positive",
+            "text": "GPU business gross margin: nVidia vs AIBs 2000-2022\n\nSource: Jon Peddie Research\nhttps://t.co/lYnxmxlnhT https://t.co/2SkRgGVTvy"
+        },
+        {
+            "sentiment": "negative",
+            "text": "How to reduce your temps and wattage with one simple setting.\n\nFor us casual players I would recommend it 100%. https://t.co/Bi1m7r17jc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "You have questions about any of our new announcements? Our team is ready to answer. \n\nJoin our GeForce RTX 40 Series Q&amp;A here \u2192 https://t.co/GsanqoFL2U"
+        },
+        {
+            "sentiment": "positive",
+            "text": "1/ @NVIDIA's GTC 97-min keynote is worth watching.\nhttps://t.co/Vo0p4IxUwc\n\nLOTS of cutting edge XR &amp; AI tech &amp; announcements.\n\nThread \ud83d\udc47\ud83e\uddf5breaking down how spatial computing (aka the consumer Metaverse) will be built on top of the enterprise uses of XR &amp; digital twins they show. https://t.co/7vCPmQHmTG"
+        },
+        {
+            "sentiment": "negative",
+            "text": "NEW VIDEO! | Nvidia is slowly PRICING OUT the average consumer: https://t.co/cjqWwDZzHW \ud83d\udc40\ud83d\udc40 https://t.co/juGeBXwMzw"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Bruh @nvidia just blew my mind! First off Morrowind getting a look in during their showcase \ud83e\udd2f Second, WHAT?! Look at it \ud83d\ude0d\ud83d\ude0d\ud83d\ude0d https://t.co/rbb96K9Bo6"
+        },
+        {
+            "sentiment": "positive",
+            "text": "DLSS3 has been a labor of love in Applied Deep Learning Research since the group was founded. I can\u2019t wait for people to play with it.\n\n@nvidia has incredible tenacity when inventing revolutionary technologies and I\u2019m proud to be a part of this work. https://t.co/mBqo0LTtph"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Enjoy this cinematic teaser for Racer RTX. Available this November, Racer RTX is an interactive physics-accurate simulation featuring the most realistically rendered RC cars ever built in @nvidiaomniverse.\n\nExperience the #BeyondFast power of GeForce RTX 40 series. https://t.co/tu5e3Q0wWc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Alright, Nvidia is finally embracing #Ada #Lovelace"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Everything we announced at #GeForceBeyond: \n\n\ud83d\udfe2GeForce RTX 4090 &amp; 4080 coming soon\n\ud83d\udfe2New DLSS 3 with Optical Multi Frame Generation\n\ud83d\udfe235+ New DLSS 3 Games &amp; Apps\n\ud83d\udfe2Portal with RTX\n\ud83d\udfe2Updates to the @NVIDIAStudio suite for all creators\n\nRead more \ud83d\udc49 https://t.co/TONK3Umd25 https://t.co/YfvamWxEXd"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\u3010\ud83d\udce2\u3011I've been working with the amazing people at @NVIDIAStudio over the last few months to bring their newly released NVIDIA Broadcast face tracking to VTube Studio!! \u2728\n\nIt works on any RTX-series GPU and is ACCURATE and HIGHLY PERFORMANT \u2728\n\nWill be released early October! \ud83c\udf42 https://t.co/4dGl5ojqvp"
+        },
+        {
+            "sentiment": "positive",
+            "text": "This views chart looks kinda like what EVGA said to NVIDIA recently https://t.co/EtdIcY1U10"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA's new RTX 4090, RTX 4080 16GB, and RTX 4080 12GB detailed, including additional specs not shown in the keynote video presentation: https://t.co/3amv5GSkzT"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia has outdone themselves in marketing this year. Rename the RTX 4070 12G to the RTX 4080 12G and sell a cheaper chip more expensive than its predecessor. \n\nRTX 4080(aka 4070) - 1100\u20ac \ud83e\udee0\n\nIs it just me or does RTX 3090TI look more interesting? https://t.co/x0mLGs3tGl"
+        },
+        {
+            "sentiment": "positive",
+            "text": "There are over 35+ games &amp; apps upcoming with support for the incredible performance of DLSS 3\n\nLearn more: https://t.co/jZfx8HVC6o https://t.co/AGxlpz79t2"
+        },
+        {
+            "sentiment": "positive",
+            "text": "The Zotac NVIDIA 4090 hits different.. https://t.co/2MmVE6mxzz"
+        },
+        {
+            "sentiment": "positive",
+            "text": "THE NVIDIA GEFORCE RTX 4090 IS HERE!\n\u2705 World's most advanced GPU\n\u2705 24GB G6X memory\n\u2705 8K60fps game recording\n\u2705 Significantly improved raytracing\n\u2705 More than 2x as powerful as 3090ti\n\u2705 $1599 https://t.co/KvoAmxAnDa"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia reveals DLSS 3 capable of offering 4x performance boost. https://t.co/9G0aXiPyJD"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Here is a picture of ALL The NVIDIA GeForce 4090s \ud83d\udc40 https://t.co/DYJ7YY35lI"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Come fly with NVIDIA DLSS 3 in Microsoft Flight Simulator for unparalleled performance. \n\nComing soon. #BeyondFast https://t.co/uisokpOhcS"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/4c9RgoOAEE https://t.co/DsyNHjQKyh"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA finally announced the 40 Series GPUs... Hang on to your wallets! https://t.co/htsA3REQ4d"
+        },
+        {
+            "sentiment": "positive",
+            "text": "At #GTC22, our CEO Jensen Huang unveiled new chips based on the Ada Lovelace GPU architecture, advances to our computing platforms, and new cloud services to further the era of #AI and the #metaverse that will transform every industry. https://t.co/B5aCktCbbL"
+        },
+        {
+            "sentiment": "positive",
+            "text": "ASUS NVIDIA GEFORCE 4090 sneak peak \ud83d\udc40 https://t.co/1fhagrFVFx"
+        },
+        {
+            "sentiment": "positive",
+            "text": "LOL WAIT\u2026.WAIT\n\nIs DLSS 3.0 Literally just Frame Rate Interpolation for games?!!\n\nLOL MOTHER FUCKER IS CHARGING YOU A NEW GPU FOR FAKE FRAME RATES  \n\nNVIDIA CAN KEEP THAT FUCKING TRASH"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Seeing the Nvidia RTX 40 Series Performance vs Seeing the Nvidia RTX 40 Series Price https://t.co/88rR1VLZLy"
+        },
+        {
+            "sentiment": "negative",
+            "text": "Nvidia also launched DLSS 3 today. It has a new frame generation tech to boost frame rates even when a game is bottlenecked by a CPU. As it pairs with new fourth gen tensor cores, DLSS 3 is exclusive to RTX 40-series GPUs https://t.co/rSpySxxE8H"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Love Gaming and Power The Win with the all-new ZOTAC GAMING GeForce RTX 40 series powered by the NVIDIA Ada Lovelace architecture\n\n#40Series #4090 #Ada #Lovelace #GeForceRTX https://t.co/nbzFe1znXK"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Experience Cyberpunk 2077 like never before with the stunning beauty of new Ray Tracing: Overdrive Mode &amp; up to 4X performance increase with DLSS 3.\n\n#BeyondFast https://t.co/p3g2SviSKL"
+        },
+        {
+            "sentiment": "positive",
+            "text": "We just announced the GeForce RTX 40 Series and we're celebrating by giving you UNLIMITED chances to win one\n\nHere\u2019s your first chance to win:\n\n1. RT ANY GeForce post \n2. Tag a friend\n3. Comment #BeyondFast\n\nRead sweepstakes details \ud83d\udc49 https://t.co/Ls2liFtB10 https://t.co/AyMK1RKIIO"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia RTX 40-series:\n\n\u2022 RTX 4090 launches October 12th for $1,599, 2-4x faster than the RTX 3090 Ti\n\u2022 RTX 4080 (12GB) launches in Nov for $899, 2-4x faster than the RTX 3080 Ti\n\u2022 RTX 4080 (16GB) launches in Nov for $1,199, faster than 12GB model \n \nhttps://t.co/k2pG2cMHi4"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Prices in Germany:\n\n- GeForce RTX 4090: 1.949 Euro\n- GeForce RTX 4080 16 GB: 1.469 Euro\n- GeForce RTX 4080 12 GB: 1.099 Euro\n\nNVIDIA ist continuing the path \u2026"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Enjoy this cinematic teaser for Racer RTX. Available this November, Racer RTX is an interactive physics-accurate simulation featuring the most realistically rendered RC cars ever built in @nvidiaomniverse.\n\nExperience the #BeyondFast power of GeForce RTX 40 series. https://t.co/1MmHawaNnk"
+        },
+        {
+            "sentiment": "negative",
+            "text": "This is shamefully bad, because if you recall Nvidia overproduced their high end cards to cater directly to crypto mining at the cost of their midrange product, and have been stuck trying to sell thousand dollar cards nobody wants, so now... No more midrange, 4070 is out yo!"
+        },
+        {
+            "sentiment": "positive",
+            "text": "The long-awaited monster performer has arrived \ud83d\ude0e \n \nLearn More \ud83d\udc49 https://t.co/HjH3a7Kj20 \n\n#AORUS #GIGABYTE #NVIDIA #nvidiageforce #RTX40 #ApexOfCooling #CoolingWinsGames #RTX4000 https://t.co/3gte0HWxAc"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Portal RTX Mod (Not VR... yet)\n\nNvidia's example of what you can do purely with their new game modding tool on top of an existing game. Coming in November. https://t.co/vNFTrw7wcY"
+        },
+        {
+            "sentiment": "positive",
+            "text": "A Tool Making DX8/DX9 Games RTX Moddable Is Released By NVIDIA: \n\nhttps://t.co/vWBXyAIbd5 https://t.co/dXKvmejPQq"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Get ready to enjoy the #beyondfast GeForce RTX 40 Series graphics cards!\nMSI is proud to introduce the following graphics card series based on the new NVIDIA Ada Lovelace architecture: SUPRIM / SUPRIM LIQUID and GAMING TRIO\ud83d\ude0e\nLearn more: https://t.co/q8jL7cMZo7 \n\n#MSIGraphicsCard https://t.co/0PdJVfLBP0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Announced at #GTC22: #NVIDIAStudio updates accelerate AI for content creation. \u2728\n\n\u2705 New, #BeyondFast, GeForce RTX 40 series GPUs\n\u2705 DLSS 3\n\u2705 RTX Remix, an @NVIDIAOmniverse app\n\u2705 Dual AV1 Encoders\n\nPlus, deep-dive into the NVIDIA Racer RTX experience \ud83d\udc49 https://t.co/eS8wtgquVN https://t.co/wpnYDEh7Uw"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Relive the critically acclaimed and award-winning game Portal... \n\nReimagined with ray tracing, the groundbreaking AI-accelerated performance of NVIDIA DLSS 3, and the best responsiveness with NVIDIA Reflex. https://t.co/LzmXKp1IQE"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Everything we announced at #GeForceBeyond: \n\n\ud83d\udfe2 GeForce RTX 4090 &amp; 4080 coming soon\n\ud83d\udfe2 New DLSS 3 with Optical Multi Frame Generation\n\ud83d\udfe2 35+ New DLSS 3 Games &amp; Apps\n\ud83d\udfe2 Portal with RTX\n\ud83d\udfe2 Updates to the @NVIDIAStudio suite for all creators\n\nRead more \ud83d\udc49 https://t.co/ie3ksQQlVB https://t.co/wxwMuUCsvP"
+        },
+        {
+            "sentiment": "negative",
+            "text": "DLSS 3.0 is EXCLUSIVE TO THE 40 SERIES CARDS\n\nGO\n\nFUCK\n\nYOURSELF\n\nNVIDIA https://t.co/t8ZY6f3EY6"
+        },
+        {
+            "sentiment": "negative",
+            "text": "Nvidia effectively ending its midrange product range, Jesus this is bad form."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia just announced a trio of 40-series graphics cards - and DLSS 3. Here's @wsjudd with the details: https://t.co/Pjdf3lvN5D"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Graphics Card Release Dates:\n\nNVIDIA RTX 4090: October 12\nNVIDIA RTX 4080: November\nAMD Radeon GPUs: November\n\nMark your calendar\u2019s and get your wallets ready boys."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Sweepstakes Details (Correct Link): https://t.co/STLYrDNFl1"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udea8Breaking:\ud83d\udea8 Nvidia announces the launch of \"OmniVerse Cloud Services\" for building and operating industrial metaverse applications. - Reuters"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Relive the critically acclaimed and award-winning game Portal... \n\nReimagined with ray tracing, the groundbreaking AI-accelerated performance of NVIDIA DLSS 3, and the best responsiveness with NVIDIA Reflex. https://t.co/ksqycIbXox"
+        },
+        {
+            "sentiment": "positive",
+            "text": "We just announced the GeForce RTX 40 Series and we're celebrating by giving you UNLIMITED chances to win one\n\nHere\u2019s your first chance to win:\n\n1. RT ANY NEW GeForce post \n2. Tag a friend\n3. Comment #BeyondFast\n\nRead sweepstakes details \ud83d\udc49 https://t.co/PoWB4wJnuF https://t.co/ZD73nmbCP6"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA 3090 vs 4090 in Flight Simulator...\n\nUp to 2X faster. That's impressive. https://t.co/Pujccif3vy"
+        },
+        {
+            "sentiment": "positive",
+            "text": ".@nvidia and @valvesoftware have announced Portal RTX, a new version of the legendary game, that is coming in November as a free DLC to Portal owners.\n\nDetails: https://t.co/pNwVxn4Mwu\n\n#rtxon #nvidia #valve #portalrtx #games https://t.co/d5J27G10cI"
+        },
+        {
+            "sentiment": "positive",
+            "text": "RTX 4090 : TDP 450W / Require PSU 850W\nRTX 4080 16G : TDP 320W / Require PSU 750W\nRTX 4080 12G : TDP 285W / Require PSU 700W\n\n\u2605Minimum is based on a PC configured with a [Ryzen 9 5900X] processor\n\n- NVIDIA"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Called it last week!  Nvidia is calling their 12GB card a \"4080\" simply so they can justify xx80 pricing!\n\nGotta admit though, it costs more than I expected... https://t.co/0jdSFWjqrU"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Totally didn\u2019t expect these to be announced already, but the NVIDIA RTX 4080 and 4090 are only weeks away\u2026 https://t.co/yUbdq3WoEG"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing the NVIDIA Ada Lovelace architecture powering GeForce RTX 40 Series GPUs:\n\n\u2714\ufe0f New SMs provide up to 2x perf and power efficiency\n\u2714\ufe0f 4th Gen Tensor Cores with up to 2x AI perf\n\u2714\ufe0f 3rd Gen RT Cores with up to 2x ray tracing perf\n\n#BeyondFast \ud83d\udc49 https://t.co/0tRGB0WTvD https://t.co/adFeVE5ng4"
+        },
+        {
+            "sentiment": "positive",
+            "text": "During Nvidia's GTC keynote, CEO Jensen Huang officially announced the RTX 4000 series of desktop graphics cards. https://t.co/abwTP8u3HU"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA GEFORCE RTX 4090\n\n$1599\nLaunch Date: October 12th\n\n2-4X FASTER than the 3090ti \ud83e\udd2f https://t.co/lgdz9Am2TS"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia has just announced its next-gen RTX 4090 and RTX 4080 GPUs. The RTX 4090 ships on October 12th priced at $1,599, with the RTX 4080 16GB model starting at $1,199. Full details here: https://t.co/k2pG2cMHi4 https://t.co/hiaDv9jNgs"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing The NVIDIA GeForce RTX 4090.\n\nAn enormous leap in performance, efficiency, and AI-powered graphics. \n\nhttps://t.co/4rlSzJWPIa https://t.co/1EUU4DZdns"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia, $NVDA, announces next-gen RTX 4090 and RTX 4080 GPUs."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Introducing The NVIDIA GeForce RTX 4090.\n\nAn enormous leap in performance, efficiency, and AI-powered graphics. \n\nhttps://t.co/w7JC7urVVs https://t.co/D29iAORtF4"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA has announced the GeForce RTX 4080, starts at $899.\n\nAvailable in November https://t.co/HUDKNMEk1i"
+        },
+        {
+            "sentiment": "positive",
+            "text": "(1/2) Today, we release Batocera 35 \"Monarch Butterfly\" with:\n\u2705 support for all light guns out of the box\n\u2705 automatic NVidia config\n\u2705 touchscreen ES for handheld PC\n\u2705 GamePark GP32, VTech Laser, Arduboy, Lowres-NX emulators\n\u2705 New Joycon and Xbox bluetooth drivers\n..."
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVidia officially announces the RTX 4090 at $1599 https://t.co/EYcaaPyv0l"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia and Valve have announced PORTAL with RTX is coming in November as a free DLC to Portal owners. https://t.co/RY0vedib2h"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA CORP ANNOUNCES NEW 'ADA LOVELACE' GRAPHICS CHIPS FOR GAMING - VIRTUAL EVENT"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Someone needs to teach NVIDIA about viewer retention on YouTube..."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Join us now as our CEO Jensen Huang unveils real-world breakthroughs for the era of #AI and the metaverse. #GTC22 https://t.co/AxvuQzLFgr"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\u26a0\ufe0f ABOUT TO START \u26a0\ufe0f\n\nPC Enthusiasts, don\u2019t miss the GeForce Beyond special broadcast.\n\n\ud83d\udcfa https://t.co/BsQu6FEJeP https://t.co/J5Od6X1o2O"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA Project Beyond Keynote goes live in 15 minutes (8 AM PT)\nYouTube https://t.co/2AYp5aOWks\nTwitch https://t.co/OzhTf0hPoI https://t.co/YXmodXLsMO"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\u26a0\ufe0f Less than 1 hour to our GeForce Beyond Special Broadcast \u26a0\ufe0f\n\nRetweet + comment #ProjectBeyond for a chance to WIN an RTX ON Keycap\n\nTune in \ud83d\udcfa  https://t.co/BsQu6FFh4n\n\nhttps://t.co/uFZqpWoepQ"
+        },
+        {
+            "sentiment": "positive",
+            "text": "12 hours to GeForce Beyond \ud83d\udc49 https://t.co/T8mOAvw8ev \n\n#ProjectBeyond\n9.20.22\n8AM PDT https://t.co/FFWJr8POpM"
+        },
+        {
+            "sentiment": "positive",
+            "text": "NVIDIA GeForce RTX 4090 Founders Edition has been pictured \nhttps://t.co/USJc55OHz0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Here's an example showing how to use the code with Mixed Precision enabled (float16 computation) on NVIDIA GPUs. Only 10s generation time per image (512x512) on the default Colab GPU. No drop in quality.\n\nhttps://t.co/1Dqt5Xfvh3"
+        },
+        {
+            "sentiment": "positive",
+            "text": "These are the 5 altcoins with the biggest enterprise partnerships\n\n1. $QNT (Oracle, KPMG, Nvidia, 2,000 banks)\n2. $CYPH (Google, Microsoft, IBM)\n3. $HBAR (Google, IBM, LG)\n4. $VET (Walmart, DHL, Governments)\n5. $DAG (Air Force, Quant, MongoDB, Splunk) https://t.co/I2ramHMOgg"
+        },
+        {
+            "sentiment": "negative",
+            "text": "Uber and Rockstar Games are in close coordination with the FBI and US Department of Justice amid both companies being hacked.\n\nThe group known as Lapsus were seemingly involved with the attacks which have previously targeted Microsoft &amp; Nvidia in 2022.\n\nhttps://t.co/VVrGsA2ljJ https://t.co/1Dv3rXnsrb"
+        },
+        {
+            "sentiment": "positive",
+            "text": "\ud83d\udcc2The Future \n    \u2514\u2705 Access granted\n\n#ProjectBeyond https://t.co/lRVS895mMN"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Join Jensen's keynote Tuesday, September 20 to see the breakthroughs in #AI that are transforming every industry. See how NVIDIA's latest advances are helping us take on the world's greatest challenges--together. #GTC22. https://t.co/koKB69ZCmc https://t.co/MDCz5z1IH0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "24 hours to GeForce Beyond \ud83d\udc49 https://t.co/T8mOAvw8ev\n\n#ProjectBeyond\n9.20.22\n8AM PDT https://t.co/kotxuIIpYo"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Cathie Wood #ARK has loaded up on 400k of #Nvidia shares. She is too early because it's a classic bubble https://t.co/ZSkBHBY388 As we have said before, history suggest you buy it when the P/E hits 20, which put the stock in low $70s, i.e. back to pre-pandemic levels. https://t.co/vug8DuWdPZ"
+        },
+        {
+            "sentiment": "positive",
+            "text": "GPUs are NOT just for training deep learning models.\n\nNVIDIA has built libraries for *drop-in* GPU acceleration of common ML tasks:\n\n\u2022 cuPy for NumPy\n\u2022 cuDF for Pandas\n\u2022 cuML for Scikit-Learn\n\u2022 cuGraph for NetworkX\n\nRapid iteration is key. Use your GPU for more than training."
+        },
+        {
+            "sentiment": "negative",
+            "text": "BREAKING: An online hacker forum admin claims that the individual behind the GTA 6 &amp; Uber hacks is none other than the leader of the Lapsus$ ransomware gang.\n\nReportedly, a 16 year old boy from the UK.\n\nLapsus$ previously breached Okta, Samsung, Nvidia, Microsoft, Ubisoft, etc."
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia has all but confirmed its GeForce RTX 40-series launches tomorrow. A 40-hour countdown stream by Nvidia includes Easter eggs like a Discord \u201cUser40\u201d profile with an Ada Lovelace photo \ud83d\udc40 https://t.co/QXIyy3tiXN https://t.co/0DT0BgiCyp"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Hp Omen 16\n\nSpecs:\n11th Gen, 512ssd/16gb, 6gb Nvidia RTX 3060 Graphics\n\nSend us a DM or whatsApp: https://t.co/dKxA7F4PF2\n\nPrice: N750, 000 https://t.co/rtuSeZ344a"
+        },
+        {
+            "sentiment": "negative",
+            "text": "Reviewers: \"We hate how Nvidia doesn't give pricing until the last minute, grumble grumble.\"\nCompanies partnered with Nvidia to make said product: \"Samezies\""
+        },
+        {
+            "sentiment": "positive",
+            "text": "40 Hours to GeForce Beyond \ud83d\udcfa https://t.co/OQiFvri8nY\n\n#ProjectBeyond\n9.20.22\n8AM PDT https://t.co/jf4lOpxs7X"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Gonna be honest, when it comes to leaks I get no hype from it. We're not suppose to see this now, in fact I think it just ruins the hype. \ud83d\ude29\ud83d\ude29\n\nLast of us part 2, GTA 6, Nvidia leaks and so on. Does nothing for me when it leaks, I would prefer to be surprised on shows instead"
+        },
+        {
+            "sentiment": "positive",
+            "text": "Nvidia\u2019s RTX 40-series is about to launch. These new cards come just as GPU-based mining for crypto is basically dead with the Ethereum merge, Nvidia lost $1 billion in gaming revenue, EVGA has ditched Nvidia, and GPU demand is down. Gonna be an interesting RTX 40-series launch https://t.co/V0f13sY7X0"
+        },
+        {
+            "sentiment": "positive",
+            "text": "EVGA is no longer going to make next gen nVidia graphics cars (or any graphics cards).\n\nCompanies don\u2019t do this without deep shifts in either their own business or the industry at large.\n\nSomething is up, and I suspect the story is deeper.\n\nhttps://t.co/HfHQHU49bH via @YouTube"
+        },
+        {
+            "sentiment": "positive",
+            "text": "GPU business gross margin: nVidia vs AIBs 2000-2022\n\nSource: Jon Peddie Research\nhttps://t.co/lYnxmxlnhT https://t.co/2SkRgGVTvy"
+        },
+        {
+            "sentiment": "negative",
+            "text": "EVGA will no longer make NVIDIA GPUs due to \u201cdisrespectful treatment\u201d https://t.co/xDNpmh9Hcv"
+        }
+    ]
+}
