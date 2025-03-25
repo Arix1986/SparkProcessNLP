@@ -1,16 +1,22 @@
 import os
 import sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from datetime import date
+from dotenv import load_dotenv
 from scraper.app_twitter_scraper import TwitterScraper
 # from app_text_pprocessor import TextCleaner
 
-scraper = TwitterScraper("apify_api_XmzodU8QoayHLTBPkws22kC2GiLsR700gVm3")
+# Load environment variables
+load_dotenv()
+
+# Get API token from environment variable
+apify_token = os.getenv('APIFY_API_TOKEN')
+if not apify_token:
+    raise ValueError("APIFY_API_TOKEN environment variable is not set")
+
+scraper = TwitterScraper(apify_token)
 
 app = FastAPI()
 

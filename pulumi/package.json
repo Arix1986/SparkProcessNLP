@@ -1,0 +1,14 @@
+{
+    "name": "SparkProcessNLP",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^18",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@pulumi/docker": "^4.6.2",
+        "@pulumi/gcp": "^8.22.0",
+        "@pulumi/pulumi": "^3.113.0",
+        "dotenv": "^16.4.7"
+    }
+}
