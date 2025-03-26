@@ -1,0 +1,10 @@
+name: SparkProcessNLP
+description: Sistema en la nube para el an lisis de sentimientos en redes sociales (Twitter), permitiendo evaluar la percepci¢n de una marca y optimizar estrategias de marketing
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: typescript

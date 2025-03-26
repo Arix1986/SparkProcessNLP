@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+
+# Pulumi files
+.pulumi/
+.pulumi.stacks/
+
+# Environment files
+.env
+.env.*
+
+# Build and output directories
+bin/
+obj/
+dist/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
