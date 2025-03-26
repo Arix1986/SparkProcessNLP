@@ -148,7 +148,6 @@ trainer.train()
 #### 📌 5. Inferencias del Modelo
 
 
-
 ---
 
-
+Python 3.12.9

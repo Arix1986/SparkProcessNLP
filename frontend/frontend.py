@@ -1,4 +1,6 @@
 # frontend/frontend.py
+from datetime import datetime, date
+from api_requests import run_search_tweets
 import streamlit as st
 import requests
 import json
@@ -19,12 +21,12 @@ def display_input_form():
     st.title("Twitter Sentiment Analysis Scraper")
 
     st.header("Input Data")
-    keyword = st.text_input("Enter a keyword (e.g., #Python, OpenAI):")
-    start_date = st.date_input("Start date:")
-    end_date = st.date_input("End date:")
+    keyword = st.text_input("Enter a keyword (e.g., #Python, OpenAI):", value="nvidia")
+    start_date = st.date_input("Start date:", value=date(2024, 3, 1))
+    end_date = st.date_input("End date:", value=date(2024, 3, 10))
 
     with st.expander("Advanced Options"):
-        max_items = st.number_input("Maximum number of tweets to scrape:", min_value=1, value=500)
+        max_items = st.number_input("Maximum number of tweets to scrape:", min_value=1, value=10)
         tweet_language = st.text_input("Tweet Language (e.g., 'en' for English):", value="en")
         mentioning = st.text_input("Mentioning (comma-separated usernames):", value="")
         min_favorites = st.number_input("Minimum Favorites:", min_value=0, value=5)
@@ -42,7 +44,7 @@ def display_input_form():
         if st.button("Fake Scrape"):
             st.session_state.show_results = True
             st.session_state.data = {
-                "search_terms": keyword,
+                "search_terms": [keyword],
                 "start_date": start_date.strftime('%Y-%m-%d'),
                 "end_date": end_date.strftime('%Y-%m-%d'),
                 "max_items": max_items,
@@ -62,7 +64,7 @@ def display_input_form():
         if st.button("Scrape Tweets"):
             st.session_state.show_results = True
             st.session_state.data = {
-                "search_terms": keyword,
+                "search_terms": [keyword],
                 "start_date": start_date.strftime('%Y-%m-%d'),
                 "end_date": end_date.strftime('%Y-%m-%d'),
                 "max_items": max_items,
@@ -84,25 +86,32 @@ def display_results():
     st.title("Scraping Results")
 
     with st.spinner("Fetching data and performing sentiment analysis..."):
-        time.sleep(2)  # Simulate a delay for loading
-        response = requests.post("http://localhost:5000/process", json=st.session_state.data)
+        try:
+            # Get results from run_search_tweets
+            result = run_search_tweets(**st.session_state.data)
 
-        if response.status_code == 200:
-            result = response.json()
+            print(result)
 
             st.success("Scraping and sentiment analysis completed successfully!")
 
+            # Convert the result to a DataFrame for analysis
+            df = pd.DataFrame(result)
+            
+            # Calculate sentiment summary
+            positive_count = len(df[df['predict'] == 1])
+            negative_count = len(df[df['predict'] == 0])
+            
             st.header("Sentiment Analysis Summary")
             col1, col2 = st.columns(2)
             with col1:
-                st.metric("Positive Tweets", result['summary']['positive_count'])
+                st.metric("Positive Tweets", positive_count)
             with col2:
-                st.metric("Negative Tweets", result['summary']['negative_count'])
+                st.metric("Negative Tweets", negative_count)
 
             st.subheader("Sentiment Distribution")
             sentiment_counts = {
-                "Positive": result['summary']['positive_count'],
-                "Negative": result['summary']['negative_count'],
+                "Positive": positive_count,
+                "Negative": negative_count,
             }
 
             # Create a pie chart using Seaborn
@@ -115,23 +124,23 @@ def display_results():
                 startangle=90,
                 wedgeprops={"edgecolor": "white", "linewidth": 1},
             )
-            ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
+            ax.axis('equal')
 
             # Display the pie chart on the left half of the screen
             col1, col2 = st.columns(2)
             with col1:
                 st.pyplot(fig)
 
-            # Display random tweets on the right half of the screen
+            # Display example tweets on the right half of the screen
             with col2:
                 st.subheader("Example Tweets")
-                positive_examples = pd.DataFrame(result['example_tweets']['positive'])
-                negative_examples = pd.DataFrame(result['example_tweets']['negative'])
+                positive_examples = df[df['predict'] == 1]
+                negative_examples = df[df['predict'] == 0]
 
                 st.write("Positive Tweets:")
-                st.dataframe(positive_examples, use_container_width=True)
+                st.dataframe(positive_examples[['text', 'prob']], use_container_width=True)
                 st.write("Negative Tweets:")
-                st.dataframe(negative_examples, use_container_width=True)
+                st.dataframe(negative_examples[['text', 'prob']], use_container_width=True)
 
             st.subheader("Download Results")
             json_str = json.dumps(result, indent=4)
@@ -141,8 +150,8 @@ def display_results():
                 file_name="sentiment_analysis_results.json",
                 mime="application/json",
             )
-        else:
-            st.error("An error occurred during scraping or sentiment analysis.")
+        except Exception as e:
+            st.error(f"An error occurred during scraping or sentiment analysis: {str(e)}")
 
     if st.button("Back to Input"):
         st.session_state.show_results = False
