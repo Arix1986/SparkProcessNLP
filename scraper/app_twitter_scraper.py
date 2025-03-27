@@ -2,12 +2,13 @@ import pandas as pd
 import os
 from apify_client import ApifyClient
 from datetime import datetime
+import asyncio
 
 class TwitterScraper:
     def __init__(self, token):
         self.client = ApifyClient(token)
 
-    def run_scraper(self, search_terms, output_path, start_date, end_date, max_items=500, tweet_language="en", 
+    async def run_scraper(self, search_terms, output_path, start_date, end_date, max_items=500, tweet_language="en", 
                     mentioning="",  min_favorites=5, min_replies=5, min_retweets=5, only_video=False,
                     only_verified=False, only_image=False, only_quote=False, only_twitter_blue=False,
                     keep_all_response_data=False):
@@ -45,25 +46,25 @@ class TwitterScraper:
         # Obtener resultados
         data = list(self.client.dataset(run["defaultDatasetId"]).iterate_items())
 
-        print(f"Datos obtenidos: {len(data)}")  # Imprimir la cantidad de datos obtenidos
+        print(f"Datos obtenidos: {len(data)}")
 
         # Filtrar resultados sin datos
         data = [item for item in data if not item.get('noResults', False)]
 
         if data:
             if keep_all_response_data: 
-                self.save_to_csv(data, output_path)
+                await self.save_to_csv(data, output_path)
             else:
-                self.save_needed_fields_to_csv(data, output_path)
+                await self.save_needed_fields_to_csv(data, output_path)
         else:
             print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: No se encontraron datos en la consulta.")
 
-    def save_to_csv(self, data, output_path):
+    async def save_to_csv(self, data, output_path):
         df = pd.DataFrame(data)
         df.to_csv(output_path, index=False, encoding="utf-8")
         print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: Datos guardados en {output_path} - {len(df)} tweets.")
     
-    def save_needed_fields_to_csv(self, data, output_path):
+    async def save_needed_fields_to_csv(self, data, output_path):
         processed_data = []
 
         for item in data:
