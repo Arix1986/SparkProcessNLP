@@ -73,8 +73,11 @@ La infraestructura está definida como código usando Pulumi y desplegada en Goo
 
 2. **Desplegar Infraestructura:**
    ```bash
-   cd pulumi
-   pulumi up
+   - cd pulumi
+   - pulumi install
+   - pulumi config set gcp:project sparknlp-architecture
+   - pulumi up
+   - crear el stack (dev) o escoger uno ya existente
    ```
 
 3. **Verificar Despliegue:**
