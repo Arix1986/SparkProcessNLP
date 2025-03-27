@@ -2,46 +2,62 @@
 import streamlit as st
 from datetime import date
 
-st.set_page_config(page_title="Twitter Sentiment Analysis", layout="wide")
+st.set_page_config(page_title="Análisis de Sentimientos en Twitter", layout="wide")
 
-st.title("Twitter Sentiment Analysis Scraper")
+# Título principal
+st.title("🔍 Analiza la percepción pública sobre tu marca en Twitter")
 
-st.header("Input Data")
-keyword = st.text_input("Enter a keyword (e.g., #Python, OpenAI):", value="nvidia")
-start_date = st.date_input("Start date:", value=date(2024, 3, 1))
-end_date = st.date_input("End date:", value=date(2024, 3, 10))
+st.markdown("""
+Este módulo te permite obtener y analizar tweets relacionados con un tema, marca o palabra clave específica.
 
-with st.expander("Advanced Options"):
-    max_items = st.number_input("Maximum number of tweets to scrape:", min_value=1, value=10)
-    tweet_language = st.text_input("Tweet Language (e.g., 'en' for English):", value="en")
-    mentioning = st.text_input("Mentioning (comma-separated usernames):", value="")
-    min_favorites = st.number_input("Minimum Favorites:", min_value=0, value=5)
-    min_replies = st.number_input("Minimum Replies:", min_value=0, value=5)
-    min_retweets = st.number_input("Minimum Retweets:", min_value=0, value=5)
-    only_video = st.checkbox("Only Video Tweets", value=False)
-    only_verified = st.checkbox("Only Verified Users", value=False)
-    only_image = st.checkbox("Only Image Tweets", value=False)
-    only_quote = st.checkbox("Only Quote Tweets", value=False)
-    only_twitter_blue = st.checkbox("Only Twitter Blue Users", value=False)
-    keep_all_response_data = st.checkbox("Keep All Response Data", value=False)
+La herramienta está pensada para ayudarte a **entender cómo se sienten las personas respecto a tu marca o producto** en redes sociales, y cómo ese sentimiento puede impactar en tu estrategia de comunicación.
+""")
 
-if st.button("Scrape Tweets"):
+st.header("📝 Parámetros de búsqueda")
+
+# Parámetros básicos
+palabra_clave = st.text_input("📌 Palabra clave o hashtag (ej: #Python, OpenAI)", value="nvidia")
+fecha_inicio = st.date_input("📅 Fecha de inicio", value=date(2024, 3, 1))
+fecha_fin = st.date_input("📅 Fecha de fin", value=date(2024, 3, 10))
+
+# Opciones avanzadas
+with st.expander("⚙️ Opciones avanzadas de filtrado"):
+    max_items = st.number_input("🔢 Número máximo de tweets a analizar", min_value=1, max_value=100, value=10)
+    idioma = st.text_input("🌐 Idioma de los tweets (ej: 'es' para Español, 'en' para Inglés)", value="en")
+    menciones = st.text_input("👥 Usuarios mencionados (separados por coma)", value="")
+    min_favs = st.number_input("❤️ Mínimo de 'Me gusta'", min_value=0, value=5)
+    min_respuestas = st.number_input("💬 Mínimo de respuestas", min_value=0, value=5)
+    min_retweets = st.number_input("🔁 Mínimo de retweets", min_value=0, value=5)
+    
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        solo_video = st.checkbox("🎥 Solo tweets con video", value=False)
+        solo_imagen = st.checkbox("🖼️ Solo tweets con imagen", value=False)
+    with col2:
+        solo_citas = st.checkbox("💬 Solo tweets citados", value=False)
+        solo_verificados = st.checkbox("✅ Solo usuarios verificados", value=False)
+    with col3:
+        solo_twitter_blue = st.checkbox("💎 Solo usuarios con Twitter Blue", value=False)
+        guardar_respuesta_completa = st.checkbox("💾 Guardar datos completos", value=True)
+
+# Botón de acción
+if st.button("🚀 Analizar tweets"):
     st.session_state.data = {
-        "search_terms": keyword.split(","),
-        "start_date": start_date.strftime('%Y-%m-%d'),
-        "end_date": end_date.strftime('%Y-%m-%d'),
+        "search_terms": palabra_clave.split(","),
+        "start_date": fecha_inicio.strftime('%Y-%m-%d'),
+        "end_date": fecha_fin.strftime('%Y-%m-%d'),
         "max_items": max_items,
-        "tweet_language": tweet_language,
-        "mentioning": mentioning,
-        "min_favorites": min_favorites,
-        "min_replies": min_replies,
+        "tweet_language": idioma,
+        "mentioning": menciones,
+        "min_favorites": min_favs,
+        "min_replies": min_respuestas,
         "min_retweets": min_retweets,
-        "only_video": only_video,
-        "only_verified": only_verified,
-        "only_image": only_image,
-        "only_quote": only_quote,
-        "only_twitter_blue": only_twitter_blue,
-        "keep_all_response_data": keep_all_response_data,
+        "only_video": solo_video,
+        "only_verified": solo_verificados,
+        "only_image": solo_imagen,
+        "only_quote": solo_citas,
+        "only_twitter_blue": solo_twitter_blue,
+        "keep_all_response_data": guardar_respuesta_completa,
     }
 
     st.switch_page("pages/1_Results.py")
