@@ -1,3 +1,0 @@
-name: sparknlp-frontend
-runtime: python
-description: Frontend service for SparkNLP Twitter Sentiment Analysis 

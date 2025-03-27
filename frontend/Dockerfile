@@ -15,6 +15,7 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy the rest of the frontend application
 COPY frontend/ /app/
+COPY frontend/pages /app/pages
 
 # Create output directory
 RUN mkdir -p /app/output
@@ -23,4 +24,4 @@ RUN mkdir -p /app/output
 EXPOSE 8501
 
 # Run the application
-CMD ["streamlit", "run", "/app/frontend.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+CMD ["streamlit", "run", "/app/0_Input_Form.py", "--server.port", "8501", "--server.address", "0.0.0.0"]

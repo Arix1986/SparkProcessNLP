@@ -82,3 +82,7 @@ datasets/
 temp_batches/
 optuna_study.db
 .devcontainer/
+
+__main__.py
+Pulumi.requirements.txt
+Pulumi.yaml
