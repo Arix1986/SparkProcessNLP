@@ -13,7 +13,7 @@ import numpy as np
 import asyncio
 import os
 
-st.set_page_config(page_title="Resultados del Análisis", layout="wide")
+st.set_page_config(page_title="Resultados del Análisis", layout="wide", initial_sidebar_state="collapsed")
 
 st.markdown("""
     <style>
@@ -156,51 +156,6 @@ if not st.session_state.skip_analysis:
         showlegend=True
     )
     st.plotly_chart(fig, use_container_width=True)
-
-    # Histograma
-    st.subheader("📈 Confianza del Modelo por Sentimiento")
-    fig, ax = plt.subplots()
-    sns.histplot(data=df, x='prob_float', hue='predict', bins=10, kde=True, ax=ax)
-    ax.set_xlabel("Probabilidad (%)")
-    ax.set_ylabel("Cantidad")
-    ax.set_title("Distribución de Confianza")
-    st.pyplot(fig)
-
-    # Interpretación
-    promedio_positivo = positivos['prob_float'].mean()
-    promedio_negativo = negativos['prob_float'].mean()
-
-    st.markdown("### 🧠 Interpretación del Modelo")
-    st.write(f"""
-    El modelo presenta una **confianza promedio de `{promedio_positivo:.2f}%` en tweets positivos** 
-    y una **confianza promedio de `{promedio_negativo:.2f}%` en tweets negativos**.
-
-    {"✅ El modelo se muestra más seguro clasificando tweets positivos." if promedio_positivo > promedio_negativo else "⚠️ El modelo se muestra más seguro clasificando tweets negativos."}
-
-    Si muchas predicciones se acercan al 50%, esto puede indicar que el modelo tiene baja certeza y podría necesitar mejoras o ajustes en los datos de entrenamiento.
-    """)
-
-    # WordClouds
-    st.subheader("☁️ Palabras Más Frecuentes")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.write("Tweets Positivos")
-        texto_positivo = " ".join(positivos['text'])
-        nube_positiva = WordCloud(width=600, height=300, background_color='white').generate(texto_positivo)
-        st.image(nube_positiva.to_array())
-    with col2:
-        st.write("Tweets Negativos")
-        texto_negativo = " ".join(negativos['text'])
-        nube_negativa = WordCloud(width=600, height=300, background_color='white').generate(texto_negativo)
-        st.image(nube_negativa.to_array())
-
-    # Top tweets
-    st.subheader("🏆 Tweets con Mayor Confianza")
-    st.markdown("#### Positivos")
-    st.dataframe(positivos.sort_values(by='prob_float', ascending=False).head(5)[['text', 'prob']], use_container_width=True)
-
-    st.markdown("#### Negativos")
-    st.dataframe(negativos.sort_values(by='prob_float', ascending=False).head(5)[['text', 'prob']], use_container_width=True)
 
     # Tweets completos
     st.subheader("📄 Tweets")
