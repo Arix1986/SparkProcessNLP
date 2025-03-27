@@ -1,13 +1,11 @@
 # frontend/frontend.py
-from datetime import datetime, date
+from datetime import date
 from api_requests import run_search_tweets
 import streamlit as st
-import requests
 import json
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import time
 
 # Set page configuration
 st.set_page_config(page_title="Twitter Sentiment Analysis", layout="wide")
@@ -15,6 +13,8 @@ st.set_page_config(page_title="Twitter Sentiment Analysis", layout="wide")
 # Initialize session state
 if 'show_results' not in st.session_state:
     st.session_state.show_results = False
+if 'data' not in st.session_state:
+    st.session_state.data = None
 
 # Function to display the input form
 def display_input_form():
@@ -39,47 +39,26 @@ def display_input_form():
         only_twitter_blue = st.checkbox("Only Twitter Blue Users", value=False)
         keep_all_response_data = st.checkbox("Keep All Response Data", value=False)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("Fake Scrape"):
-            st.session_state.show_results = True
-            st.session_state.data = {
-                "search_terms": [keyword],
-                "start_date": start_date.strftime('%Y-%m-%d'),
-                "end_date": end_date.strftime('%Y-%m-%d'),
-                "max_items": max_items,
-                "tweet_language": tweet_language,
-                "mentioning": mentioning,
-                "min_favorites": min_favorites,
-                "min_replies": min_replies,
-                "min_retweets": min_retweets,
-                "only_video": only_video,
-                "only_verified": only_verified,
-                "only_image": only_image,
-                "only_quote": only_quote,
-                "only_twitter_blue": only_twitter_blue,
-                "keep_all_response_data": keep_all_response_data,
-            }
-    with col2:
-        if st.button("Scrape Tweets"):
-            st.session_state.show_results = True
-            st.session_state.data = {
-                "search_terms": [keyword],
-                "start_date": start_date.strftime('%Y-%m-%d'),
-                "end_date": end_date.strftime('%Y-%m-%d'),
-                "max_items": max_items,
-                "tweet_language": tweet_language,
-                "mentioning": mentioning,
-                "min_favorites": min_favorites,
-                "min_replies": min_replies,
-                "min_retweets": min_retweets,
-                "only_video": only_video,
-                "only_verified": only_verified,
-                "only_image": only_image,
-                "only_quote": only_quote,
-                "only_twitter_blue": only_twitter_blue,
-                "keep_all_response_data": keep_all_response_data,
-            }
+    if st.button("Scrape Tweets"):
+        st.session_state.data = {
+            "search_terms": keyword.split(","),
+            "start_date": start_date.strftime('%Y-%m-%d'),
+            "end_date": end_date.strftime('%Y-%m-%d'),
+            "max_items": max_items,
+            "tweet_language": tweet_language,
+            "mentioning": mentioning,
+            "min_favorites": min_favorites,
+            "min_replies": min_replies,
+            "min_retweets": min_retweets,
+            "only_video": only_video,
+            "only_verified": only_verified,
+            "only_image": only_image,
+            "only_quote": only_quote,
+            "only_twitter_blue": only_twitter_blue,
+            "keep_all_response_data": keep_all_response_data,
+        }
+        st.session_state.show_results = True
+        st.rerun()
 
 # Function to display the results
 def display_results():
@@ -155,6 +134,8 @@ def display_results():
 
     if st.button("Back to Input"):
         st.session_state.show_results = False
+        st.session_state.data = None
+        st.rerun()
 
 # Main logic
 if not st.session_state.show_results:
