@@ -24,7 +24,7 @@ os.makedirs(output_dir, exist_ok=True)
 async def scrape_and_prepare_csv(data):
     output_path = os.path.join(output_dir, "scraped_tweets.csv")
     
-    # await scraper.run_scraper(output_path=output_path, **data)
+    await scraper.run_scraper(output_path=output_path, **data)
     
     df = pd.read_csv(output_path)
     df = df[['text']]

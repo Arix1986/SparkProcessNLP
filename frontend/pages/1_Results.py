@@ -15,6 +15,53 @@ import os
 
 st.set_page_config(page_title="Resultados del Análisis", layout="wide")
 
+st.markdown("""
+    <style>
+    /* Oculta el menú y el pie de página de Streamlit */
+    #MainMenu, footer {visibility: hidden;}
+
+    /* Ajustes generales del layout */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    /* Texto más claro y limpio */
+    html, body, [class*="css"]  {
+        font-family: 'Segoe UI', sans-serif;
+        color: #111;
+        background-color: #fff;
+    }
+
+    /* Estilo para títulos */
+    h1, h2, h3 {
+        color: #0D47A1;
+    }
+
+    /* Bordes suaves en dataframes y expander */
+    .stDataFrame, .stExpander {
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+    }
+
+    /* Botones */
+    .stButton>button {
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        background-color: #0D47A1;
+        color: white;
+        border: none;
+    }
+    .stButton>button:hover {
+        background-color: #1565C0;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
 if 'data' not in st.session_state:
     st.error("No se encontraron datos de entrada. Por favor, vuelve a la página principal.")
     st.stop()

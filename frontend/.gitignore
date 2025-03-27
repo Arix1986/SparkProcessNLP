@@ -36,10 +36,6 @@ venv.bak/
 *.swo
 .DS_Store
 
-# Streamlit specific
-.streamlit/
-.streamlit/secrets.toml
-
 # Jupyter Notebook
 .ipynb_checkpoints
 *.ipynb
