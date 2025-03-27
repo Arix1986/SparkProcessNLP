@@ -1,12 +1,13 @@
 # Frontend - Análisis de Sentimientos de Twitter
 
-Este repositorio contiene el código del frontend y comunicación con el backend para un sistema de análisis de sentimientos de tweets. El frontend está desarrollado con **Streamlit** y para comunicación con el backend realizado con **APIFY** usamos **aiohttp**. La función search_tweets se comunica con un scraper de Twitter para obtener tweets y luego se comunica con el backend para realizar un análisis de sentimientos.
+Este repositorio contiene el código del frontend y la comunicación con el backend para un sistema de análisis de sentimientos de tweets. El frontend está desarrollado con **Streamlit** y utiliza **`aiohttp`** para interactuar con un scraper externo implementado con **APIFY** y un backend de análisis de sentimientos.
 
-## Estructura del Proyecto
+## 🧠 ¿Cómo funciona?
 
-- **`frontend.py`**: Aplicación de Streamlit que permite al usuario ingresar parámetros para buscar tweets y visualizar los resultados del análisis de sentimientos.
-- **`api_requests.py`**: Módulo que maneja las solicitudes HTTP al backend, ejecuta el scraper de Twitter y se comunica con el backend para realiazar un análisis de sentimientos .
-- **`.env`**: Archivo de configuración para variables de entorno.
+1. El usuario ingresa términos de búsqueda y filtros desde una interfaz web.
+2. El scraper de Twitter (vía APIFY) recupera los tweets.
+3. El backend procesa los textos con un modelo de análisis de sentimientos.
+4. El frontend visualiza resultados y permite exportar los datos.
 
 ## Requisitos
 
@@ -30,7 +31,7 @@ conda create -n sparknlp_base python=3.12.9 -y
 conda activate sparknlp_base && pip install -r requirements.txt
 
 # Ejecutar la aplicación
-conda activate sparknlp_base && streamlit run frontend/frontend.py
+conda activate sparknlp_base && streamlit run frontend/0_Input_Form.py
 
 # Para desactivar el entorno cuando termines
 conda deactivate

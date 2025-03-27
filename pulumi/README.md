@@ -8,10 +8,6 @@ Este documento describe la arquitectura y componentes principales del proyecto S
 
 ```
 SparkProcessNLP/
-├── backend/                 # Servicio backend en FastAPI
-│   ├── app/                # Código fuente del backend
-│   ├── Dockerfile          # Configuración de Docker para el backend
-│   └── .env               # Variables de entorno del backend
 ├── frontend/            # Interfaz de usuario en Streamlit
 │   ├── app.py             # Aplicación principal de Streamlit
 │   ├── Dockerfile         # Configuración de Docker para el frontend
@@ -24,22 +20,7 @@ SparkProcessNLP/
 
 ## Componentes Principales
 
-### 1. Backend (FastAPI)
-
-El backend es un servicio REST API construido con FastAPI que maneja:
-- Búsqueda de tweets usando la API de Apify
-- Procesamiento de datos
-- Almacenamiento de resultados
-
-**Variables de Entorno:**
-- `APIFY_API_TOKEN`: Token de autenticación para la API de Apify
-
-**Endpoints:**
-- `POST /search`: Endpoint principal para búsqueda de tweets
-  - Parámetros: términos de búsqueda, fechas, filtros, etc.
-  - Retorna: tweets procesados en formato JSON
-
-### 2. Frontend (Streamlit)
+### 1. Frontend (Streamlit)
 
 La interfaz de usuario está construida con Streamlit y proporciona:
 - Formulario interactivo para búsqueda de tweets
@@ -55,7 +36,7 @@ La interfaz de usuario está construida con Streamlit y proporciona:
 - Filtros dinámicos
 - Manejo de errores y estados de carga
 
-### 3. Infraestructura (Pulumi)
+### 2. Infraestructura (Pulumi)
 
 La infraestructura está definida como código usando Pulumi y desplegada en Google Cloud Platform:
 
@@ -72,8 +53,7 @@ La infraestructura está definida como código usando Pulumi y desplegada en Goo
 ## Flujo de Datos
 
 1. El usuario interactúa con la interfaz de Streamlit
-2. El frontend envía la solicitud al backend
-3. El backend procesa la solicitud usando la API de Apify
+2. El frontend recibe los párametros de busqueda, procesa la solicitud usando la API de Apify y consume el backend para hacer la inferencia.
 4. Los resultados se envían de vuelta al frontend
 5. El frontend visualiza los resultados
 
@@ -87,16 +67,17 @@ La infraestructura está definida como código usando Pulumi y desplegada en Goo
 
 ### Pasos de Despliegue
 
-1. **Configurar Variables de Entorno en Pulumi:**
-   ```bash
-   pulumi config set --secret apifyToken "tu_token_de_apify"
-   pulumi config set --secret backendUrl "https://tu-backend-service-url/search"
-   ```
+1. **Configurar Variables de Entorno:**
+   - Crea un archivo .env basandote en el arhivo .env_example
+   - Llena los valores de las variables
 
 2. **Desplegar Infraestructura:**
    ```bash
-   cd pulumi
-   pulumi up
+   - cd pulumi
+   - pulumi install
+   - pulumi config set gcp:project sparknlp-architecture
+   - pulumi up
+   - crear el stack (dev) o escoger uno ya existente
    ```
 
 3. **Verificar Despliegue:**
