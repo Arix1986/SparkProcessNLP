@@ -11,3 +11,7 @@ watchdog==6.0.0
 pybind11>=2.12.0
 getenv==0.2.0
 python-dotenv==1.0.1
+pandas>=2.0.0
+numpy>=1.24.0
+plotly>=5.18.0
+wordcloud>=1.9.3
