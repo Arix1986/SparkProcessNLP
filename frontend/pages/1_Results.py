@@ -1,14 +1,17 @@
+import csv
 import streamlit as st
 import json
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from api_requests import run_search_tweets
+from api_requests import scrape_and_prepare_csv, upload_file_and_predict
 from wordcloud import WordCloud
 import re
 from collections import Counter
 import plotly.express as px
 import numpy as np
+import asyncio
+import os
 
 st.set_page_config(page_title="Resultados del Análisis", layout="wide")
 
@@ -30,12 +33,35 @@ if not st.session_state.skip_analysis:
     st.title("📊 Resultados del Análisis de Sentimientos")
 
     if 'result' not in st.session_state or st.session_state.result is None:
-        with st.spinner("Obteniendo datos y analizando sentimientos..."):
+        with st.status("🕵️ Iniciando análisis de sentimientos...", expanded=True) as estado:
             try:
-                resultado = run_search_tweets(**st.session_state.data)
-                st.session_state.result = resultado
-                st.session_state.json_str = json.dumps(resultado, indent=4)
+                st.write("🔍 Paso 1: Obteniendo tweets desde Twitter...")
+                path_csv, df = asyncio.run(scrape_and_prepare_csv(st.session_state.data))
+
+                st.write("📤 Paso 2: Enviando tweets al backend para limpieza y análisis...")
+                predicciones = asyncio.run(upload_file_and_predict(path_csv))
+
+                st.write("🧠 Paso 3: Procesando resultados...")
+                for i, item in enumerate(predicciones):
+                    df.loc[i, 'predict'] = item['predict']
+                    df.loc[i, 'prob'] = item['prob']
+
+                st.session_state.result = df.to_dict('records')
+                st.session_state.json_str = json.dumps(st.session_state.result, indent=4)
+
+                print("path_csv", path_csv)
+                if os.path.exists(path_csv): 
+                    os.remove(path_csv)
+
+                frontend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                csv_original_path = os.path.join(frontend_dir, "output", "scraped_tweets.csv")
+                print("csv_original_path", csv_original_path)
+                if os.path.exists(csv_original_path): 
+                    os.remove(csv_original_path)
+
+                estado.update(label="✅ Análisis completado con éxito", state="complete")
             except Exception as e:
+                estado.update(label="❌ Error durante el análisis", state="error")
                 st.error(f"Ocurrió un error durante el análisis: {str(e)}")
                 st.stop()
 
@@ -53,37 +79,16 @@ if not st.session_state.skip_analysis:
     col2.metric("Tweets Positivos", len(positivos))
     col3.metric("Tweets Negativos", len(negativos))
 
-    # # Gráfico de torta
-    # st.subheader("📊 Distribución de Sentimientos")
-    # fig, ax = plt.subplots()
-    # sns.set_palette("pastel")
-    # ax.pie(
-    #     [len(positivos), len(negativos)],
-    #     labels=["Positivos", "Negativos"],
-    #     autopct='%1.1f%%',
-    #     startangle=90,
-    #     wedgeprops={"edgecolor": "white", "linewidth": 1},
-    # )
-    # ax.axis('equal')
-    # st.pyplot(fig)
-
-    # Distribución de Sentimientos y Confianza (Gráfico Polar)
-    # Preparamos columnas auxiliares
+    # Gráfico polar
     df['Clase'] = df['predict'].map({0: 'Negativo', 1: 'Positivo'})
     df['ClaseEmoji'] = df['Clase'].map({'Positivo': '😄 Positivo', 'Negativo': '😡 Negativo'})
 
-    # Creamos ángulos tipo radar para darle forma circular
     np.random.seed(42)
-
     def asignar_theta(row):
-        # Asignamos un ángulo distinto para cada clase
         return np.random.uniform(0, 90) if row['Clase'] == 'Positivo' else np.random.uniform(180, 270)
-
     df['theta'] = df.apply(asignar_theta, axis=1)
 
-    # Gráfico polar
     st.subheader("🧭 Distribución de Sentimientos y Confianza (Gráfico Polar)")
-
     fig = px.scatter_polar(
         df,
         r='prob_float',
@@ -95,19 +100,17 @@ if not st.session_state.skip_analysis:
         title="🌐 Visualización Polar de Confianza en las Predicciones",
         height=600
     )
-
     fig.update_traces(marker=dict(opacity=0.8, line=dict(width=1, color='DarkSlateGrey')))
     fig.update_layout(
         polar=dict(
             radialaxis=dict(range=[0, 100], showticklabels=True, tickfont=dict(color="black")),
-            angularaxis=dict(showticklabels=False)  # opcional
+            angularaxis=dict(showticklabels=False)
         ),
         showlegend=True
     )
-
     st.plotly_chart(fig, use_container_width=True)
 
-    # Histograma de confianza
+    # Histograma
     st.subheader("📈 Confianza del Modelo por Sentimiento")
     fig, ax = plt.subplots()
     sns.histplot(data=df, x='prob_float', hue='predict', bins=10, kde=True, ax=ax)
@@ -116,7 +119,7 @@ if not st.session_state.skip_analysis:
     ax.set_title("Distribución de Confianza")
     st.pyplot(fig)
 
-    # Interpretación automática
+    # Interpretación
     promedio_positivo = positivos['prob_float'].mean()
     promedio_negativo = negativos['prob_float'].mean()
 
@@ -130,7 +133,7 @@ if not st.session_state.skip_analysis:
     Si muchas predicciones se acercan al 50%, esto puede indicar que el modelo tiene baja certeza y podría necesitar mejoras o ajustes en los datos de entrenamiento.
     """)
 
-    # Nube de palabras
+    # WordClouds
     st.subheader("☁️ Palabras Más Frecuentes")
     col1, col2 = st.columns(2)
     with col1:
@@ -144,7 +147,7 @@ if not st.session_state.skip_analysis:
         nube_negativa = WordCloud(width=600, height=300, background_color='white').generate(texto_negativo)
         st.image(nube_negativa.to_array())
 
-    # Tweets con mayor confianza
+    # Top tweets
     st.subheader("🏆 Tweets con Mayor Confianza")
     st.markdown("#### Positivos")
     st.dataframe(positivos.sort_values(by='prob_float', ascending=False).head(5)[['text', 'prob']], use_container_width=True)
@@ -152,14 +155,14 @@ if not st.session_state.skip_analysis:
     st.markdown("#### Negativos")
     st.dataframe(negativos.sort_values(by='prob_float', ascending=False).head(5)[['text', 'prob']], use_container_width=True)
 
-    # Ejemplos completos
-    st.subheader("📄 Ejemplos de Tweets")
+    # Tweets completos
+    st.subheader("📄 Tweets")
     with st.expander("Ver todos los Tweets Positivos"):
         st.dataframe(positivos[['text', 'prob']], use_container_width=True)
     with st.expander("Ver todos los Tweets Negativos"):
         st.dataframe(negativos[['text', 'prob']], use_container_width=True)
 
-    # Descargar JSON
+    # Descargar resultados
     st.subheader("⬇️ Descargar Resultados")
     st.download_button(
         label="Descargar JSON",
