@@ -157,6 +157,14 @@ if not st.session_state.skip_analysis:
     )
     st.plotly_chart(fig, use_container_width=True)
 
+    # Top tweets
+    st.subheader("🏆 Tweets con Mayor Confianza")
+    st.markdown("#### Positivos")
+    st.dataframe(positivos.sort_values(by='prob_float', ascending=False).head(5)[['text', 'prob']], use_container_width=True)
+
+    st.markdown("#### Negativos")
+    st.dataframe(negativos.sort_values(by='prob_float', ascending=False).head(5)[['text', 'prob']], use_container_width=True)
+
     # Tweets completos
     st.subheader("📄 Tweets")
     with st.expander("Ver todos los Tweets Positivos"):
