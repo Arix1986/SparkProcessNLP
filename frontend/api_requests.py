@@ -3,12 +3,16 @@ import sys
 import pandas as pd
 import asyncio
 import aiohttp
+from dotenv import load_dotenv
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+# Load environment variables from .env file
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
+
 from scraper.app_twitter_scraper import TwitterScraper
 
-# Initialize scraper (only used in production mode)
+# Initialize scraper
 token = os.getenv("APIFY_TOKEN")
 scraper = TwitterScraper(token) if token else None
 

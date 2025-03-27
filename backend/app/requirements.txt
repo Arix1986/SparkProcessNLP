@@ -1,6 +1,0 @@
-fastapi
-uvicorn[standard]
-pydantic
-pandas
-apify-client==1.9.2
-python-dotenv==1.0.0
