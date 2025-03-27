@@ -1,7 +1,6 @@
-venv
-embeddings/
-datasets/
-__pycache__/
-temp_batches/
-optuna_study.db
-.devcontainer/
+__pycache__/*
+backend/app/__pycache__/main.cpython-312.pyc
+scraper/__pycache__/app_twitter_scraper.cpython-312.pyc
+backend/venv/*
+venv/*
+scraper/__pycache__/app_twitter_scraper.cpython-310.pyc
