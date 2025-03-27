@@ -1,10 +1,44 @@
-# 0_Input_Form.py
 import streamlit as st
 from datetime import date
 
-st.set_page_config(page_title="Análisis de Sentimientos en Twitter", layout="wide")
+st.set_page_config(page_title="Análisis de Sentimientos", layout="wide")
 
-# Título principal
+# 💅 Estilo visual personalizado
+st.markdown("""
+    <style>
+    #MainMenu, footer {visibility: hidden;}
+
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    html, body, [class*="css"]  {
+        font-family: 'Segoe UI', sans-serif;
+        color: #111;
+        background-color: #fff;
+    }
+
+    h1, h2, h3 {
+        color: #0D47A1;
+    }
+
+    .stButton>button {
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        background-color: #0D47A1;
+        color: white;
+        border: none;
+    }
+    .stButton>button:hover {
+        background-color: #1565C0;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# 🧠 Título y descripción
 st.title("🔍 Analiza la percepción pública sobre tu marca en Twitter")
 
 st.markdown("""
@@ -13,14 +47,14 @@ Este módulo te permite obtener y analizar tweets relacionados con un tema, marc
 La herramienta está pensada para ayudarte a **entender cómo se sienten las personas respecto a tu marca o producto** en redes sociales, y cómo ese sentimiento puede impactar en tu estrategia de comunicación.
 """)
 
-st.header("📝 Parámetros de búsqueda")
+# 📌 Entrada de parámetros
+with st.container():
+    st.header("📝 Parámetros de búsqueda")
+    palabra_clave = st.text_input("📌 Palabra clave o hashtag (ej: #Python, OpenAI)", value="nvidia")
+    fecha_inicio = st.date_input("📅 Fecha de inicio", value=date(2024, 3, 1))
+    fecha_fin = st.date_input("📅 Fecha de fin", value=date(2024, 3, 10))
 
-# Parámetros básicos
-palabra_clave = st.text_input("📌 Palabra clave o hashtag (ej: #Python, OpenAI)", value="nvidia")
-fecha_inicio = st.date_input("📅 Fecha de inicio", value=date(2024, 3, 1))
-fecha_fin = st.date_input("📅 Fecha de fin", value=date(2024, 3, 10))
-
-# Opciones avanzadas
+# ⚙️ Opciones avanzadas
 with st.expander("⚙️ Opciones avanzadas de filtrado"):
     max_items = st.number_input("🔢 Número máximo de tweets a analizar", min_value=1, max_value=100, value=10)
     idioma = st.text_input("🌐 Idioma de los tweets (ej: 'es' para Español, 'en' para Inglés)", value="en")
@@ -40,8 +74,9 @@ with st.expander("⚙️ Opciones avanzadas de filtrado"):
         solo_twitter_blue = st.checkbox("💎 Solo usuarios con Twitter Blue", value=False)
         guardar_respuesta_completa = st.checkbox("💾 Guardar datos completos", value=True)
 
-# Botón de acción
-if st.button("🚀 Analizar tweets"):
+# 🚀 Botón de acción
+st.markdown("###")
+if st.button("🚀 Analizar Tweets"):
     st.session_state.data = {
         "search_terms": palabra_clave.split(","),
         "start_date": fecha_inicio.strftime('%Y-%m-%d'),
