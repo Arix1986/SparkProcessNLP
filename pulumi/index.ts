@@ -46,7 +46,7 @@ const frontendService = new gcp.cloudrun.Service("frontendService", {
               value: backendUrl,
             },
             {
-              name: "APIFY_API_TOKEN",
+              name: "APIFY_TOKEN",
               value: apifyToken,
             },
           ],
