@@ -5,3 +5,6 @@ backend/venv/*
 venv/*
 scraper/__pycache__/app_twitter_scraper.cpython-310.pyc
 .env
+backend/app/scraper/__init__.py
+backend/__init__.py
+backend/app/__init__.py

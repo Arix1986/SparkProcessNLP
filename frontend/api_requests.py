@@ -13,7 +13,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 from scraper.app_twitter_scraper import TwitterScraper
 
 # Initialize scraper
-token = os.getenv("APIFY_TOKEN")
+token = "apify_api_XmzodU8QoayHLTBPkws22kC2GiLsR700gVm3" #os.getenv("APIFY_TOKEN")
 scraper = TwitterScraper(token) if token else None
 
 # Get the current directory path and create output directory
@@ -24,7 +24,7 @@ os.makedirs(output_dir, exist_ok=True)
 async def scrape_and_prepare_csv(data):
     output_path = os.path.join(output_dir, "scraped_tweets.csv")
     
-    await scraper.run_scraper(output_path=output_path, **data)
+    # await scraper.run_scraper(output_path=output_path, **data)
     
     df = pd.read_csv(output_path)
     df = df[['text']]
