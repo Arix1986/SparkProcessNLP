@@ -8,3 +8,5 @@ scraper/__pycache__/app_twitter_scraper.cpython-310.pyc
 backend/app/scraper/__init__.py
 backend/__init__.py
 backend/app/__init__.py
+
+pulumi/node_modules/*

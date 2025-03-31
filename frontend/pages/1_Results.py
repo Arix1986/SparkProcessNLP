@@ -85,7 +85,7 @@ if not st.session_state.skip_analysis:
                 st.write("🔍 Paso 1: Obteniendo tweets desde Twitter...")
                 path_csv, df = asyncio.run(scrape_and_prepare_csv(st.session_state.data))
 
-                st.write("📤 Paso 2: Enviando tweets al backend para limpieza y análisis...")
+                st.write("📤 Paso 2: Analizando tweets...")
                 predicciones = asyncio.run(upload_file_and_predict(path_csv))
 
                 st.write("🧠 Paso 3: Procesando resultados...")

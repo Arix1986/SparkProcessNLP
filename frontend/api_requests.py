@@ -16,6 +16,8 @@ from scraper.app_twitter_scraper import TwitterScraper
 token = "apify_api_XmzodU8QoayHLTBPkws22kC2GiLsR700gVm3" #os.getenv("APIFY_TOKEN")
 scraper = TwitterScraper(token) if token else None
 
+BACKEND_URL="http://34.59.29.99:5000"
+
 # Get the current directory path and create output directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
 output_dir = os.path.join(current_dir, 'output')
@@ -39,14 +41,14 @@ async def upload_file_and_predict(text_csv_path):
         with open(text_csv_path, "rb") as f:
             data = aiohttp.FormData()
             data.add_field('file', f)
-            async with session.post("http://34.16.65.91:5000/get_test_file", data=data) as response:
+            async with session.post(BACKEND_URL+"/get_test_file", data=data) as response:
                 response_data = await response.json()
                 file_path = response_data.get("path")
         
         print("Getting predictions...")
         inference_payload = {"path": file_path, "tipo": "csv"}
         async with session.post(
-            "http://34.16.65.91:5000/inferencia",
+            BACKEND_URL+"/inferencia",
             headers={"accept": "application/json", "Content-Type": "application/json"},
             json=inference_payload
         ) as inference_response:
