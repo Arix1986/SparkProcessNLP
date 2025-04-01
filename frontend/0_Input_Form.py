@@ -62,7 +62,6 @@ with col_filtros:
         if max_items > max_tweets:
             st.error("⚠️ El número máximo de tweets no puede ser mayor a "+str(max_tweets))
             
-        idioma = st.text_input("🌐 Idioma (ej: 'es' para Español, 'en' para Inglés)", value="en")
         menciones = st.text_input("👥 Menciones (usuarios separados por coma)", value="")
         min_favs = st.number_input("❤️ Mínimo de 'Me gusta'", min_value=0, value=5)
         min_respuestas = st.number_input("💬 Mínimo de respuestas", min_value=0, value=5)
@@ -91,7 +90,7 @@ with col_filtros:
                 "start_date": fecha_inicio.strftime('%Y-%m-%d'),
                 "end_date": fecha_fin.strftime('%Y-%m-%d'),
                 "max_items": max_items,
-                "tweet_language": idioma,
+                "tweet_language": "en",
                 "mentioning": menciones,
                 "min_favorites": min_favs,
                 "min_replies": min_respuestas,
