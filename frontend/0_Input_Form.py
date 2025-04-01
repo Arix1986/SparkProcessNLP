@@ -48,6 +48,8 @@ st.title("🔍 Analiza la percepción pública sobre tu marca en Twitter")
 # 📐 Diseño en columnas
 col_filtros, col_info = st.columns([1, 1])
 
+max_tweets = 999
+
 # 🔎 Columna izquierda: Filtros de búsqueda
 with col_filtros:
     st.header("📝 Parámetros de búsqueda")
@@ -56,7 +58,10 @@ with col_filtros:
     fecha_fin = st.date_input("📅 Fecha de fin", value=date(2024, 3, 10))
 
     with st.expander("⚙️ Opciones avanzadas de filtrado"):
-        max_items = st.number_input("🔢 Número máximo de tweets a analizar", min_value=1, max_value=100, value=10)
+        max_items = st.number_input("🔢 Número máximo de tweets a analizar", min_value=1, value=10)
+        if max_items > max_tweets:
+            st.error("⚠️ El número máximo de tweets no puede ser mayor a "+str(max_tweets))
+            
         idioma = st.text_input("🌐 Idioma (ej: 'es' para Español, 'en' para Inglés)", value="en")
         menciones = st.text_input("👥 Menciones (usuarios separados por coma)", value="")
         min_favs = st.number_input("❤️ Mínimo de 'Me gusta'", min_value=0, value=5)
@@ -75,25 +80,30 @@ with col_filtros:
             guardar_respuesta_completa = st.checkbox("💾 Guardar datos completos", value=True)
 
     st.markdown("###")
-    if st.button("🚀 Analizar Tweets"):
-        st.session_state.data = {
-            "search_terms": palabra_clave.split(","),
-            "start_date": fecha_inicio.strftime('%Y-%m-%d'),
-            "end_date": fecha_fin.strftime('%Y-%m-%d'),
-            "max_items": max_items,
-            "tweet_language": idioma,
-            "mentioning": menciones,
-            "min_favorites": min_favs,
-            "min_replies": min_respuestas,
-            "min_retweets": min_retweets,
-            "only_video": solo_video,
-            "only_verified": solo_verificados,
-            "only_image": solo_imagen,
-            "only_quote": solo_citas,
-            "only_twitter_blue": solo_twitter_blue,
-            "keep_all_response_data": guardar_respuesta_completa,
-        }
-        st.switch_page("pages/1_Results.py")
+    submit_button = st.button("🚀 Analizar Tweets")
+    
+    if submit_button:
+        if max_items > max_tweets:
+            st.error("❌ Por favor, reduce el número de tweets a analizar a un máximo de "+str(max_tweets))
+        else:
+            st.session_state.data = {
+                "search_terms": palabra_clave.split(","),
+                "start_date": fecha_inicio.strftime('%Y-%m-%d'),
+                "end_date": fecha_fin.strftime('%Y-%m-%d'),
+                "max_items": max_items,
+                "tweet_language": idioma,
+                "mentioning": menciones,
+                "min_favorites": min_favs,
+                "min_replies": min_respuestas,
+                "min_retweets": min_retweets,
+                "only_video": solo_video,
+                "only_verified": solo_verificados,
+                "only_image": solo_imagen,
+                "only_quote": solo_citas,
+                "only_twitter_blue": solo_twitter_blue,
+                "keep_all_response_data": guardar_respuesta_completa,
+            }
+            st.switch_page("pages/1_Results.py")
 
 # 🖼️ Columna derecha: Instrucciones + Imagen
 with col_info:
