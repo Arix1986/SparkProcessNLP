@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from api_requests import scrape_and_prepare_csv, upload_file_and_predict
+from api_requests import scrape_and_prepare_csv, upload_file_and_predict, run_analysis_steps
 from wordcloud import WordCloud
 import re
 from collections import Counter
@@ -78,36 +78,60 @@ if not st.session_state.get('skip_analysis', False):
     if 'result' not in st.session_state or st.session_state.result is None:
         with st.status("🕵️ Iniciando análisis de sentimientos...", expanded=True) as estado:
             try:
+                # Paso 1: Obtener tweets
                 st.write("🔍 Paso 1: Obteniendo tweets desde Twitter...")
-                path_csv, df = asyncio.run(scrape_and_prepare_csv(st.session_state.data))
+                try:
+                    path_csv, df = asyncio.run(scrape_and_prepare_csv(st.session_state.data))
+                except ValueError as e:
+                    estado.update(label="❌ No se encontraron tweets", state="error")
+                    st.error(str(e))
+                    st.stop()
+                except Exception as e:
+                    estado.update(label="❌ Error obteniendo tweets", state="error")
+                    st.error(f"Error durante la obtención de tweets: {str(e)}")
+                    st.stop()
 
+                # Paso 2: Analizar tweets
                 st.write("📤 Paso 2: Analizando tweets...")
-                predicciones = asyncio.run(upload_file_and_predict(path_csv))
+                try:
+                    predicciones = asyncio.run(upload_file_and_predict(path_csv))
+                except Exception as e:
+                    estado.update(label="❌ Error en el análisis", state="error")
+                    st.error(f"Error durante el análisis de sentimientos: {str(e)}")
+                    st.stop()
 
+                # Paso 3: Procesar resultados
                 st.write("🧠 Paso 3: Procesando resultados...")
-                for i, item in enumerate(predicciones):
-                    df.loc[i, 'predict'] = item['predict']
-                    df.loc[i, 'prob'] = item['prob']
+                try:
+                    for i, item in enumerate(predicciones):
+                        df.loc[i, 'predict'] = item['predict']
+                        df.loc[i, 'prob'] = item['prob']
 
-                st.session_state.result = df.to_dict('records')
-                st.session_state.json_str = json.dumps(st.session_state.result, indent=4)
+                    st.session_state.result = df.to_dict('records')
+                    st.session_state.json_str = json.dumps(st.session_state.result, indent=4)
+                except Exception as e:
+                    estado.update(label="❌ Error procesando resultados", state="error")
+                    st.error(f"Error durante el procesamiento de resultados: {str(e)}")
+                    st.stop()
 
-                print("path_csv", path_csv)
-                if os.path.exists(path_csv): 
-                    os.remove(path_csv)
-
-                frontend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-                csv_original_path = os.path.join(frontend_dir, "output", "scraped_tweets.csv")
-                print("csv_original_path", csv_original_path)
-                if os.path.exists(csv_original_path): 
-                    os.remove(csv_original_path)
+                # Limpieza de archivos temporales
+                try:
+                    if os.path.exists(path_csv):
+                        os.remove(path_csv)
+                    frontend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                    csv_original_path = os.path.join(frontend_dir, "output", "scraped_tweets.csv")
+                    if os.path.exists(csv_original_path):
+                        os.remove(csv_original_path)
+                except Exception as e:
+                    print(f"Error durante la limpieza de archivos: {e}")
 
                 estado.update(label="✅ Análisis completado con éxito", state="complete")
             except Exception as e:
-                estado.update(label="❌ Error durante el análisis", state="error")
-                st.error(f"Ocurrió un error durante el análisis: {str(e)}")
+                estado.update(label="❌ Error inesperado", state="error")
+                st.error(f"Ocurrió un error inesperado: {str(e)}")
                 st.stop()
 
+    # Continuar con la visualización de resultados solo si no hubo errores
     resultado = st.session_state.result
     df = pd.DataFrame(resultado)
     df['prob_float'] = df['prob'].str.replace('%', '').astype(float)
@@ -271,7 +295,7 @@ if not st.session_state.get('skip_analysis', False):
                 "text": "Tweet",
                 "prob": "Confianza"
             }
-                     )
+                    )
 
     # Descargar resultados
     st.subheader("⬇️ Descargar Resultados")

@@ -26,9 +26,16 @@ os.makedirs(output_dir, exist_ok=True)
 async def scrape_and_prepare_csv(data):
     output_path = os.path.join(output_dir, "scraped_tweets.csv")
     
+    # Ejecutar el scraper y verificar si encontró resultados
     await scraper.run_scraper(output_path=output_path, **data)
     
+    if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
+        raise ValueError("No se encontraron tweets que coincidan con los criterios de búsqueda.")
+    
     df = pd.read_csv(output_path)
+    if len(df) == 0:
+        raise ValueError("No se encontraron tweets que coincidan con los criterios de búsqueda.")
+        
     df = df[['text']]
     text_csv_path = os.path.join(output_dir, "scraped_tweets_text.csv")
     df.to_csv(text_csv_path, index=False)
