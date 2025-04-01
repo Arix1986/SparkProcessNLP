@@ -64,19 +64,15 @@ st.set_page_config(page_title="Resultados del Análisis", layout="wide", initial
 
 if 'data' not in st.session_state:
     st.error("No se encontraron datos de entrada. Por favor, vuelve a la página principal.")
-    st.stop()
-
-if 'skip_analysis' not in st.session_state:
-    st.session_state.skip_analysis = False
-
-if st.button("Volver al Formulario"):
-    st.session_state.skip_analysis = True
-    st.session_state.data = None
-    st.session_state.result = None
-    st.session_state.json_str = None
     st.switch_page("0_Input_Form.py")
 
-if not st.session_state.skip_analysis:
+if st.button("Volver al Formulario"):
+    # Limpiar todo el estado antes de volver
+    for key in list(st.session_state.keys()):
+        del st.session_state[key]
+    st.switch_page("0_Input_Form.py")
+
+if not st.session_state.get('skip_analysis', False):
     st.title("📊 Resultados del Análisis de Sentimientos")
 
     if 'result' not in st.session_state or st.session_state.result is None:

@@ -5,6 +5,10 @@ import os
 
 st.set_page_config(page_title="Análisis de Sentimientos", layout="wide", initial_sidebar_state="collapsed")
 
+# Asegurarse de que no hay estado anterior
+if 'data' in st.session_state:
+    del st.session_state['data']
+
 # 💅 Estilo personalizado
 st.markdown("""
     <style>
