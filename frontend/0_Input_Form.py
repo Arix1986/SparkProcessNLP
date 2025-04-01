@@ -1,6 +1,7 @@
 import streamlit as st
 from datetime import date
 from PIL import Image
+import os
 
 st.set_page_config(page_title="Análisis de Sentimientos", layout="wide", initial_sidebar_state="collapsed")
 
@@ -111,5 +112,6 @@ with col_info:
         """)
     
     # Imagen siempre visible debajo del expander
-    st.image("frontend/static/sentiment_cover_v1.png", use_container_width=True)
+    image_path = os.path.join(os.path.dirname(__file__), "static", "sentiment_cover_v1.png")
+    st.image(image_path, use_container_width=True)
 
