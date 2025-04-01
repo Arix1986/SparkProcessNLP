@@ -95,17 +95,17 @@ if not st.session_state.skip_analysis:
 
                 st.session_state.result = df.to_dict('records')
                 st.session_state.json_str = json.dumps(st.session_state.result, indent=4)
-# Borrado
-                # print("path_csv", path_csv)
-                # if os.path.exists(path_csv): 
-                #     os.remove(path_csv)
 
-                # frontend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-                # csv_original_path = os.path.join(frontend_dir, "output", "scraped_tweets.csv")
-                # print("csv_original_path", csv_original_path)
-                # if os.path.exists(csv_original_path): 
-                #     os.remove(csv_original_path)
-# Hasta acá
+                print("path_csv", path_csv)
+                if os.path.exists(path_csv): 
+                    os.remove(path_csv)
+
+                frontend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                csv_original_path = os.path.join(frontend_dir, "output", "scraped_tweets.csv")
+                print("csv_original_path", csv_original_path)
+                if os.path.exists(csv_original_path): 
+                    os.remove(csv_original_path)
+
                 estado.update(label="✅ Análisis completado con éxito", state="complete")
             except Exception as e:
                 estado.update(label="❌ Error durante el análisis", state="error")

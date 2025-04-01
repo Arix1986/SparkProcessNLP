@@ -26,7 +26,7 @@ os.makedirs(output_dir, exist_ok=True)
 async def scrape_and_prepare_csv(data):
     output_path = os.path.join(output_dir, "scraped_tweets.csv")
     
-    # await scraper.run_scraper(output_path=output_path, **data)
+    await scraper.run_scraper(output_path=output_path, **data)
     
     df = pd.read_csv(output_path)
     df = df[['text']]
@@ -45,14 +45,16 @@ async def upload_file_and_predict(text_csv_path):
                 response_data = await response.json()
                 file_path = response_data.get("path")
         
-        print("Getting predictions...")
+        print("Getting predictions..." + file_path)
         inference_payload = {"path": file_path, "tipo": "csv"}
         async with session.post(
             BACKEND_URL+"/inferencia",
             headers={"accept": "application/json", "Content-Type": "application/json"},
             json=inference_payload
         ) as inference_response:
+            inference_response.raise_for_status()  # Raise exception for bad status codes
             inference_data = await inference_response.json()
+            print("Inference response data:", inference_data)
             return inference_data
 
 def run_analysis_steps(data):
