@@ -177,6 +177,7 @@ trainer.train()
 
 #### 📌 7. Carpeta Backend SparkNLP
     - Arquitectura de todo el proceso de inferencia.
+    - Servicio GPC Backend: http://34.16.65.91:5000/docs
 
 ---
 
