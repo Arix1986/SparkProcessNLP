@@ -145,8 +145,38 @@ trainer = Trainer(
 )
 trainer.train()
 ```
-#### 📌 5. Inferencias del Modelo
+#### 📌 6. Repositorio de Recursos del Proyecto [🔗 Ver en Drive](https://drive.google.com/drive/u/0/folders/1eMikLSZX2sVQtR_17BQ5t1pAb9ieInSU)
+   ##### `Notebooks/`
+   Contiene cuadernos organizados por secciones:
 
+   - `training`: procesos de entrenamiento.
+   - `validation`: evaluación y ajuste de hiperparámetros.
+   - `test`: pruebas finales de desempeño.
+   - `embeddings`: generación y precomputación de embeddings.
+   - Definiciones de clases utilizadas a lo largo del proyecto.
+
+   ##### `Bert/`
+   Contiene embeddings preentrenados descargados, utilizados como representaciones base para tareas de procesamiento de lenguaje natural.
+
+   ##### `Tem_batches/`
+   Incluye archivos `.parquet` correspondientes a los lotes (`batch_0` a `batch_7`) utilizados en el estudio para segmentar el dataset por etapas.
+
+   ##### `Optuna_files/`
+   Registros de los estudios realizados con Optuna. Aquí se encuentran las configuraciones evaluadas y sus resultados para optimizar los modelos.
+
+   ##### `datasets/`
+   Contiene datasets utilizados durante las etapas de entrenamiento y test del proyecto.
+
+   ##### `embeddings/`
+   Embeddings precomputados almacenados para acelerar procesos posteriores de entrenamiento o inferencia.
+
+   ##### `models/`
+   - Mejores modelos de Word2Vec, organizados en subcarpetas por nombre.
+   - Archivos `xgb_stacking_best_model2` y `xgb_stacking_best_model3`, que corresponden a los metamodelos utilizados en la etapa de Stacking con XGBoost.
+   - Pipeline de limpieza y procesamiento de texto (`TextCleaner`) implementado con Spark NLP.
+
+#### 📌 7. Carpeta Backend SparkNLP
+    - Arquitectura de todo el proceso de inferencia.
 
 ---
 

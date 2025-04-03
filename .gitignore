@@ -8,5 +8,7 @@ scraper/__pycache__/app_twitter_scraper.cpython-310.pyc
 backend/app/scraper/__init__.py
 backend/__init__.py
 backend/app/__init__.py
-
+Backend SparkNLP/models/pipelines/
+Backend SparkNLP/models/sent_small_bert_L8_512/ 
+Backend SparkNLP/models/lemma_antbnc/
 pulumi/node_modules/*
