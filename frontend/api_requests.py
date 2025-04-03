@@ -13,10 +13,10 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 from scraper.app_twitter_scraper import TwitterScraper
 
 # Initialize scraper
-token = "apify_api_XmzodU8QoayHLTBPkws22kC2GiLsR700gVm3" #os.getenv("APIFY_TOKEN")
+token = os.getenv("APIFY_TOKEN")
 scraper = TwitterScraper(token) if token else None
 
-BACKEND_URL="http://34.59.29.99:5000"
+BACKEND_URL = os.getenv("BACKEND_URL")
 
 # Get the current directory path and create output directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
